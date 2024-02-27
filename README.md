@@ -17,3 +17,4 @@ As a user (logged in):
 * view account details and order history
 * update account details
 * add products to cart
+
