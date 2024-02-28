@@ -18,7 +18,6 @@ function Register() {
     },
     phone: "",
   });
-  console.log("userinfo", userInfo)
 
   function handleSubmit(event){
     event.preventDefault();
@@ -41,7 +40,7 @@ function Register() {
           ...userInfo.name,
           lastname: e.target.value
         }
-      })
+      });
 
     } else if (e.target.name === "number") {
       setUserInfo({
@@ -50,7 +49,7 @@ function Register() {
           ...userInfo.address,
           number: e.target.value
         }
-      })
+      });
 
     } else if (e.target.name === "street") {
       setUserInfo({
@@ -59,7 +58,7 @@ function Register() {
           ...userInfo.address,
           street: e.target.value
         }
-      })
+      });
 
     } else if (e.target.name === "city") {
       setUserInfo({
@@ -68,7 +67,7 @@ function Register() {
           ...userInfo.address,
           city: e.target.value
         }
-      })
+      });
 
     } else if (e.target.name == "zipcode") {
       setUserInfo({
@@ -77,7 +76,7 @@ function Register() {
           ...userInfo.address,
           zipcode: e.target.value
         }
-      })
+      });
 
     } else {
       setUserInfo({
