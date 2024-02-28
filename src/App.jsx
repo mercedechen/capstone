@@ -1,8 +1,8 @@
-import './App.css'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Navigation from './components/Navigation.jsx'
-import Products from './components/Products.jsx'
-import Register from './components/Register.jsx'
+import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Navigation from './components/Navigation.jsx';
+import Products from './components/Products.jsx';
+import Register from './components/Register.jsx';
 
 function App() {
 
@@ -14,6 +14,7 @@ function App() {
         </header>
         <Routes>
           <Route path="/" element={<Products />} />
+          <Route path="/login">Login</Route>
           <Route path="/register" element={<Register/>} />
         </Routes>
       </BrowserRouter>
@@ -21,4 +22,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
