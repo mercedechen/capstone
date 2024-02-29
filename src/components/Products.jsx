@@ -5,7 +5,11 @@ function Products() {
   const { data, error, isLoading } = useProductsQuery();
 
   if (isLoading) {
-    <div>Loading...</div>
+    return <p>Loading...</p>
+  }
+
+  if (error) {
+    return <p>Oops! Error encountered, please try again later.</p>
   }
 
   return (
