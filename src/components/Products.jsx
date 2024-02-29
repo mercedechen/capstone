@@ -1,4 +1,5 @@
-import { useProductsQuery } from '../redux/api'
+import { useProductsQuery } from '../redux/api';
+import { Link } from 'react-router-dom';
 
 function Products() {
 
@@ -19,8 +20,10 @@ function Products() {
           (product) => {
             return (
               <div className="product" key={product.id}>
-                <img src={product.image} alt={product.title} />
-                <h2>{product.title}</h2>
+                <Link to={`/${product.id}`}>
+                  <img src={product.image} alt={product.title} />
+                  <h2>{product.title}</h2>
+                </Link>
               </div>
             )
           }
