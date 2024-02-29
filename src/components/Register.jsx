@@ -96,7 +96,7 @@ function Register() {
     <>
       <h2>Create an Account</h2>
 
-      { errorMsg ? <p>Error</p> : <span /> }
+      { errorMsg ? <p>{errorMsg}</p> : <span /> }
 
       <form onSubmit={handleSubmit}>
         <label>First Name

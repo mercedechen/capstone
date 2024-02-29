@@ -4,7 +4,7 @@ const baseUrl = "https://fakestoreapi.com";
 
 export const apiSlice = createApi({
   reducerPath: "api",
-  baseQuery: fetchBaseQuery({ baseUrl}),
+  baseQuery: fetchBaseQuery({ baseUrl }),
   endpoints: (builder) => ({
     register: builder.mutation({
       query: (registerUser) => ({
@@ -13,7 +13,12 @@ export const apiSlice = createApi({
         body: registerUser,
       }),
     }),
+    products: builder.query({
+      query: () => ({
+        url: "/products"
+      }),
+    }),
   }),
 });
 
-export const { useRegisterMutation } = apiSlice;
+export const { useRegisterMutation, useProductsQuery } = apiSlice;
