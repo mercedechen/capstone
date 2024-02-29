@@ -6,7 +6,6 @@
 }
 
 .products {
-  border: 1px solid black;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -15,7 +14,6 @@
 }
 
 .product {
-  border: 1px solid black;
   width: 200px;
   margin: 22px 26px;
 }

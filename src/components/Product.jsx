@@ -7,8 +7,6 @@ function Product() {
 
   const { data, error, isLoading } = useProductQuery(id);
 
-  console.log(data);
-
   if (isLoading) {
     return <p>Loading Product...</p>
   }
