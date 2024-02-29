@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useRegisterMutation } from '../redux/api';
 
 function Register() {
 
@@ -19,8 +20,19 @@ function Register() {
     phone: "",
   });
 
-  function handleSubmit(event){
+  const [errorMsg, setError] = useState(null);
+
+  const [register] = useRegisterMutation();
+
+  async function handleSubmit(event){
     event.preventDefault();
+    const { data, error } = await register(userInfo);
+    if(error){
+      setError(error)
+      console.log(`error ${JSON.stringify(error.data)}`);
+    } else {
+      console.log(`data ${JSON.stringify(data.token)}`);
+    }
   };
 
   function onUserInput(e){
@@ -32,7 +44,6 @@ function Register() {
           firstname: e.target.value
         }
       });
-
     } else if (e.target.name === "lastname"){
       setUserInfo({
         ...userInfo,
@@ -41,7 +52,6 @@ function Register() {
           lastname: e.target.value
         }
       });
-
     } else if (e.target.name === "number") {
       setUserInfo({
         ...userInfo,
@@ -50,7 +60,6 @@ function Register() {
           number: e.target.value
         }
       });
-
     } else if (e.target.name === "street") {
       setUserInfo({
         ...userInfo,
@@ -59,7 +68,6 @@ function Register() {
           street: e.target.value
         }
       });
-
     } else if (e.target.name === "city") {
       setUserInfo({
         ...userInfo,
@@ -68,7 +76,6 @@ function Register() {
           city: e.target.value
         }
       });
-
     } else if (e.target.name == "zipcode") {
       setUserInfo({
         ...userInfo,
@@ -77,7 +84,6 @@ function Register() {
           zipcode: e.target.value
         }
       });
-
     } else {
       setUserInfo({
         ...userInfo,
@@ -90,6 +96,8 @@ function Register() {
     <>
       <h2>Create an Account</h2>
 
+      { errorMsg ? <p>Error</p> : <span /> }
+
       <form onSubmit={handleSubmit}>
         <label>First Name
           <input 
@@ -100,7 +108,6 @@ function Register() {
             onChange={onUserInput}
           />
         </label>
-
         <label>Last Name
           <input 
             type="text" 
@@ -110,7 +117,6 @@ function Register() {
             onChange={onUserInput}
           />
         </label>
-
         <label>Email
           <input 
             type="text" 
@@ -120,7 +126,6 @@ function Register() {
             onChange={onUserInput}
           />
         </label>
-
         <label>Username
           <input 
             type="text" 
@@ -130,7 +135,6 @@ function Register() {
             onChange={onUserInput}
           />
         </label>
-
         <label>Password
           <input 
             type="password" 
@@ -140,7 +144,6 @@ function Register() {
             onChange={onUserInput}
           />
         </label>
-
         <label>Address
           <input
             type="number"
@@ -171,7 +174,6 @@ function Register() {
             onChange={onUserInput}
           />
         </label>
-
         <label>Phone
           <input
             type="tel"
@@ -181,7 +183,6 @@ function Register() {
             onChange={onUserInput}
           />
         </label>
-
         <button>Submit</button>
       </form>
     </>
