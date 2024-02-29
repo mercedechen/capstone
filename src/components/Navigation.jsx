@@ -1,13 +1,17 @@
 import { NavLink } from "react-router-dom";
 
 function Navigation(){
+
+  
   return (
-    <>
-      <NavLink to="/">Shop</NavLink>
-      <NavLink to="/login">Login</NavLink>
-      <NavLink to="/register">Register</NavLink>
-      <NavLink to="/cart">Cart</NavLink>
-    </>
+    <div>
+      <div>
+        <NavLink to="/">SHOP</NavLink>
+        <NavLink to="/login">Login</NavLink>
+        <NavLink to="/register">Register</NavLink>
+        <NavLink to="/cart">Cart</NavLink>
+      </div>
+    </div>
   )
 }
 

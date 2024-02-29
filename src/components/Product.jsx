@@ -17,7 +17,6 @@ function Product() {
 
   return (
     <div>
-      <h2>Product Details</h2>
       <img src ={data.image}/>
       <h2>{data.title}</h2>
       <h3>Category: {data.category}</h3>
