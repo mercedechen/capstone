@@ -2,6 +2,7 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navigation from './components/Navigation.jsx';
 import Products from './components/Products.jsx';
+import Product from './components/Product.jsx';
 import Register from './components/Register.jsx';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
         </header>
         <Routes>
           <Route path="/" element={<Products />} />
+          <Route path="/:id" element={<Product />} />
           <Route path="/login">Login</Route>
           <Route path="/register" element={<Register/>} />
         </Routes>

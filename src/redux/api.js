@@ -15,10 +15,15 @@ export const apiSlice = createApi({
     }),
     products: builder.query({
       query: () => ({
-        url: "/products"
+        url: "/products",
+      }),
+    }),
+    product: builder.query({
+      query: (id) => ({
+        url: `/products/${id}`,
       }),
     }),
   }),
 });
 
-export const { useRegisterMutation, useProductsQuery } = apiSlice;
+export const { useRegisterMutation, useProductsQuery, useProductQuery } = apiSlice;
