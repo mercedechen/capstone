@@ -17,10 +17,8 @@ function Login(props) {
 
     if (error) {
       setErrorMsg(error.data);
-      console.log('error', error.data)
     } else {
       props.setToken(data.token);
-      console.log('token', data.token)
     }
   };
 
