@@ -12,7 +12,6 @@ import Login from './components/Login.jsx';
 
 function App() {
 
-  // token undefined
   const [ token, setToken ] = useState(null);
 
   return (
@@ -33,7 +32,7 @@ function App() {
           />
           <Route 
             path="/login"
-            element={<Login token={token} />}
+            element={<Login setToken={setToken} />}
           />
           <Route 
             path="/register" 

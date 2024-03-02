@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useLoginMutation } from '../redux/api';
 
-function Login() {
+function Login(props) {
   const [ userInfo, setUserInfo ] = useState({
     username: "",
     password: ""
@@ -16,15 +16,23 @@ function Login() {
     const { data, error } = await login(userInfo);
 
     if (error) {
-      setErrorMsg(error);
+      setErrorMsg(error.data);
+      console.log('error', error.data)
+    } else {
+      props.setToken(data.token);
+      console.log('token', data.token)
     }
   };
 
   const onUserInput = (e) => {
-    setUserInfo({
-      ...userInfo,
-      [e.target.name]: e.target.value,
-    });
+    if (errorMsg) {
+      setErrorMsg(null);
+    } else {
+      setUserInfo({
+        ...userInfo,
+        [e.target.name]: e.target.value,
+      });
+    };
   };
 
   return (
