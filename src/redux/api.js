@@ -26,6 +26,14 @@ export const apiSlice = createApi({
       }),
     }),
 
+    // Get user account details
+    // https://fakestoreapi.com/users/:id
+    account: builder.query({
+      query: (userAccount) => ({
+        url: `/users/${id}`,
+      }),
+    }),
+
     // Get list of all products
     // https://fakestoreapi.com/products
     products: builder.query({
@@ -35,7 +43,7 @@ export const apiSlice = createApi({
     }),
 
     // Get single product details by id
-    // https://fakestoreapi.com/products/1
+    // https://fakestoreapi.com/products/:id
     product: builder.query({
       query: (id) => ({
         url: `/products/${id}`,

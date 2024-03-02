@@ -5,10 +5,11 @@ import { useState } from 'react';
 // components
 import './App.css';
 import Navigation from './components/Navigation.jsx';
-import Products from './components/Products.jsx';
-import Product from './components/Product.jsx';
 import Register from './components/Register.jsx';
 import Login from './components/Login.jsx';
+import Account from './components/Account.jsx';
+import Products from './components/Products.jsx';
+import Product from './components/Product.jsx';
 
 function App() {
 
@@ -23,20 +24,24 @@ function App() {
 
         <Routes>
           <Route 
-            path="/" 
-            element={<Products />}
-          />
-          <Route 
-            path="/:id" 
-            element={<Product />}
+            path="/register" 
+            element={<Register setToken={setToken} />}
           />
           <Route 
             path="/login"
             element={<Login setToken={setToken} />}
           />
           <Route 
-            path="/register" 
-            element={<Register setToken={setToken} />}
+            path="/account"
+            element={<Account token={token}/>}
+          />
+          <Route 
+            path="/" 
+            element={<Products />}
+          />
+          <Route 
+            path="/:id" 
+            element={<Product />}
           />
         </Routes>
       </BrowserRouter>
