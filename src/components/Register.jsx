@@ -1,9 +1,13 @@
+// react
 import { useState } from 'react';
+
+// api
 import { useRegisterMutation } from '../redux/api';
 
-function Register() {
+function Register(props) {
 
-  const [userInfo, setUserInfo] = useState({
+  // variables
+  const [ userInfo, setUserInfo ] = useState({
     name: {
       firstname: "",
       lastname: ""
@@ -11,32 +15,35 @@ function Register() {
     email: "",
     username: "",
     password: "",
-    address: {
-      city: "",
-      street: "",
-      number: "",
-      zipcode: "",
-    },
-    phone: "",
+    // address: {
+    //   city: "",
+    //   street: "",
+    //   number: "",
+    //   zipcode: "",
+    // },
+    // phone: "",
   });
-
-  const [errorMsg, setError] = useState(null);
-
-  const [register] = useRegisterMutation();
-
-  async function handleSubmit(event){
+  
+  // must match the endpoint name
+  const [ register ] = useRegisterMutation(userInfo);
+  const [ errorMsg, setErrorMsg ] = useState(null);
+  
+  const handleSubmit = async (event) => {
     event.preventDefault();
+
     const { data, error } = await register(userInfo);
-    if(error){
-      setError(error)
-      console.log(`error ${JSON.stringify(error.data)}`);
+    
+    if (error) {
+      setErrorMsg(error);
     } else {
-      console.log(`data ${JSON.stringify(data.token)}`);
+      props.setToken(data.token)
     }
   };
-
+  
   function onUserInput(e){
-    if (e.target.name === "firstname"){
+    if (errorMsg) {
+      setErrorMsg(null);
+    } else if (e.target.name === "firstname"){
       setUserInfo({
         ...userInfo,
         name: {
@@ -52,51 +59,52 @@ function Register() {
           lastname: e.target.value
         }
       });
-    } else if (e.target.name === "number") {
-      setUserInfo({
-        ...userInfo,
-        address: {
-          ...userInfo.address,
-          number: e.target.value
-        }
-      });
-    } else if (e.target.name === "street") {
-      setUserInfo({
-        ...userInfo,
-        address: {
-          ...userInfo.address,
-          street: e.target.value
-        }
-      });
-    } else if (e.target.name === "city") {
-      setUserInfo({
-        ...userInfo,
-        address: {
-          ...userInfo.address,
-          city: e.target.value
-        }
-      });
-    } else if (e.target.name == "zipcode") {
-      setUserInfo({
-        ...userInfo,
-        address: {
-          ...userInfo.address,
-          zipcode: e.target.value
-        }
-      });
+    // } else if (e.target.name === "number") {
+    //   setUserInfo({
+    //     ...userInfo,
+    //     address: {
+    //       ...userInfo.address,
+    //       number: e.target.value
+    //     }
+    //   });
+    // } else if (e.target.name === "street") {
+    //   setUserInfo({
+    //     ...userInfo,
+    //     address: {
+    //       ...userInfo.address,
+    //       street: e.target.value
+    //     }
+    //   });
+    // } else if (e.target.name === "city") {
+    //   setUserInfo({
+    //     ...userInfo,
+    //     address: {
+    //       ...userInfo.address,
+    //       city: e.target.value
+    //     }
+    //   });
+    // } else if (e.target.name == "zipcode") {
+    //   setUserInfo({
+    //     ...userInfo,
+    //     address: {
+    //       ...userInfo.address,
+    //       zipcode: e.target.value
+    //     }
+    //   });
     } else {
       setUserInfo({
         ...userInfo,
         [e.target.name]: e.target.value,
-      });
+      })
     }
   }
-
+  
   return (
     <>
       <h2>Create an Account</h2>
 
-      { errorMsg ? <p>{errorMsg}</p> : <span /> }
+      {/* check ? true : false */}
+      { errorMsg ? <p>Error: {errorMsg}</p> : <span /> }
 
       <form onSubmit={handleSubmit}>
         <label>First Name
@@ -130,21 +138,21 @@ function Register() {
           <input 
             type="text" 
             name="username" 
-            placeholder="Username"
             value={userInfo.username}
             onChange={onUserInput}
+            placeholder="Username"
           />
         </label>
         <label>Password
           <input 
             type="password" 
             name="password" 
-            placeholder="Password"
             value={userInfo.password}
             onChange={onUserInput}
+            placeholder="Password"
           />
         </label>
-        <label>Address
+        {/* <label>Address
           <input
             type="number"
             name="number"
@@ -182,7 +190,7 @@ function Register() {
             value={userInfo.phone}
             onChange={onUserInput}
           />
-        </label>
+        </label> */}
         <button>Submit</button>
       </form>
     </>

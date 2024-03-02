@@ -1,16 +1,15 @@
-function Search({data, setFilteredProducts}) {
+function Search({ data, setSearchedProducts }) {
 
-  const filterProducts = (searchValue) => {
+  const searchProducts = (searchValue) => {
     if (!searchValue) {
-      setFilteredProducts([])
+      setSearchProducts([])
     } else {
-      const filteredProducts = data.filter((product) => {
+      const searchedProducts = data.filter((product) => {
         return (
           product.title.toLowerCase().includes(searchValue.toLowerCase())
         )
       })
-      console.log('filteredProducts', filteredProducts)
-      setFilteredProducts(filteredProducts);
+      setSearchedProducts(searchedProducts);
     }
   };
 
@@ -20,7 +19,7 @@ function Search({data, setFilteredProducts}) {
         <input 
           type="text" 
           placeholder="Search" 
-          onChange={(event) => filterProducts(event.target.value)}/>
+          onChange={(event) => searchProducts(event.target.value)}/>
       </form>
     </div>
   )

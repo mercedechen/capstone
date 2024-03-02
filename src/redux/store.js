@@ -3,6 +3,7 @@ import { apiSlice } from "./api"
 
 export default configureStore({
   reducer: {
+    // api object --> key:value
     [apiSlice.reducerPath]: apiSlice.reducer,
   },
   middleware: (getDefaultMiddleware) =>

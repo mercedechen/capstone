@@ -5,6 +5,11 @@
   text-align: center;
 }
 
+form {
+  display: flex;
+  flex-direction: column;
+}
+
 .products {
   display: flex;
   flex-wrap: wrap;
@@ -24,4 +29,8 @@
 
 .product h2 {
   font-size: 12pt;
+}
+
+.filter {
+  display: flex;
 }

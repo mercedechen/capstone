@@ -1,5 +1,6 @@
 import { useProductQuery } from '../redux/api';
 import { useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function Product() {
 
@@ -25,6 +26,7 @@ function Product() {
       <h3>{data.description}</h3>
       <h3>Price: {data.price}</h3>
       <h3>Add to Cart</h3>
+      <Link to="/">Go Back</Link>
     </div>
   )
 }
