@@ -9,19 +9,20 @@ export const apiSlice = createApi({
     // Register a new user
     // https://fakestoreapi.com/users
     register: builder.mutation({
-      query: (body) => ({
+      query: (registerUser) => ({
         url: "/users",
         method: "POST",
-        body,
+        body: registerUser,
       }),
     }),
 
     // Login as existing user
     // https://fakestoreapi.com/auth/login
     login: builder.mutation({
-      query: () => ({
+      query: (loginUser) => ({
         url: "/auth/login",
         method: "POST",
+        body: loginUser,
       }),
     }),
 

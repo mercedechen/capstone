@@ -12,8 +12,8 @@ import Login from './components/Login.jsx';
 
 function App() {
 
+  // token undefined
   const [ token, setToken ] = useState(null);
-  console.log(token)
 
   return (
     <div>

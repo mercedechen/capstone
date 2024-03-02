@@ -5,7 +5,6 @@ import { useState } from 'react';
 import { useRegisterMutation } from '../redux/api';
 
 function Register(props) {
-
   // variables
   const [ userInfo, setUserInfo ] = useState({
     name: {
@@ -98,7 +97,7 @@ function Register(props) {
       })
     }
   }
-  
+
   return (
     <>
       <h2>Create an Account</h2>
