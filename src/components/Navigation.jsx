@@ -3,7 +3,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 function Navigation(props){
 
   const navigate = useNavigate();
-  
+
   const logoutUser = () => {
     props.setToken(null);
     navigate("/");

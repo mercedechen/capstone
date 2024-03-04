@@ -26,11 +26,14 @@ export const apiSlice = createApi({
       }),
     }),
 
-    // Get user account details
-    // https://fakestoreapi.com/users/:id
+    // Get users
+    // https://fakestoreapi.com/users
     account: builder.query({
-      query: (userAccount) => ({
-        url: `/users/${id}`,
+      query: (token) => ({
+        url: `/users`,
+        headers: {
+          authorization: `Bearer ${token}`
+        }
       }),
     }),
 
@@ -50,17 +53,18 @@ export const apiSlice = createApi({
       }),
     }),
 
-    category: builder.query({
-      query: (category) => ({
-        url: `products/${category}`
-      }),
-    }),
+    // category: builder.query({
+    //   query: (category) => ({
+    //     url: `products/${category}`
+    //   }),
+    // }),
   }),
 });
 
 export const { 
   useRegisterMutation,
   useLoginMutation,
+  useAccountQuery,
   useProductsQuery,
   useProductQuery,
   useCategoryQuery,

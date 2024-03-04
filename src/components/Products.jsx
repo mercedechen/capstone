@@ -7,7 +7,9 @@ import Categories from './Categories';
 function Products() {
 
   const { data, error, isLoading } = useProductsQuery();
+
   const [ searchedProducts, setSearchedProducts ] = useState([]);
+  
   const [ filteredProducts, setFilteredProducts ] = useState([]);
 
   if (isLoading) {

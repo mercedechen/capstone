@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useLoginMutation } from '../redux/api';
+import { useNavigate } from 'react-router-dom';
 
 function Login(props) {
   const [ userInfo, setUserInfo ] = useState({
@@ -8,6 +9,7 @@ function Login(props) {
   });
   
   const [ login ] = useLoginMutation(userInfo);
+  const navigate = useNavigate();
   const [ errorMsg, setErrorMsg ] = useState(null);
 
   const handleSubmit = async (event) => {
@@ -19,7 +21,7 @@ function Login(props) {
       setErrorMsg(error.data);
     } else {
       props.setToken(data.token);
-      console.log('token', data.token)
+      navigate("/account");
     }
   };
 

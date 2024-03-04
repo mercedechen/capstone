@@ -1,4 +1,6 @@
-function Account() {
+import { useAccountQuery } from "../redux/api";
+
+function Account(props) {
 
   // {
   //   "address": {
@@ -23,9 +25,29 @@ function Account() {
   //   "__v": 0
   // }
 
+  const { data, error, isLoading } = useAccountQuery(props.token);
+
+  console.log('data', data);
+
+  if (isLoading) {
+    return <p>Loading Account Details...</p>
+  }
+
+  if (error) {
+    return <p>Unable to retrieve account details. Please try again later.</p>
+  }
+
   return (
     <>
       <h2>Welcome back!</h2>
+      <ul>
+        <li>First Name {data.name}</li>
+        <li>Last Name</li>
+        <li>Email</li>
+        <li>Username</li>
+        <li>Password</li>
+        <li>Address</li>
+      </ul>
     </>
   )
 }

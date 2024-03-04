@@ -10,6 +10,7 @@ import Login from './components/Login.jsx';
 import Account from './components/Account.jsx';
 import Products from './components/Products.jsx';
 import Product from './components/Product.jsx';
+import Cart from './components/Cart.jsx';
 
 function App() {
 
@@ -42,6 +43,10 @@ function App() {
           <Route 
             path="/:id" 
             element={<Product />}
+          />
+          <Route
+            path="/cart"
+            element={<Cart />}
           />
         </Routes>
       </BrowserRouter>
