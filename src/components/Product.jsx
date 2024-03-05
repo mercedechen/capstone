@@ -2,10 +2,10 @@ import { useProductQuery } from '../redux/api';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { addProduct } from '../redux/cart'
+import { addProduct } from '../redux/cart';
 
 function Product() {
-
+  
   let { id } = useParams();
 
   const dispatch = useDispatch();
@@ -22,7 +22,7 @@ function Product() {
 
   return (
     <div>
-      <img src ={data.image}/>
+      <img src ={data.image}/> 
       <h2>{data.title}</h2>
       <h3>Category: {data.category}</h3>
       <h3>Count: {data.rating.count}</h3>

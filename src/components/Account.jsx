@@ -41,7 +41,7 @@ function Account(props) {
     <>
       <h2>Welcome back!</h2>
       <ul>
-        <li>First Name {data.name}</li>
+        <li>First Name</li>
         <li>Last Name</li>
         <li>Email</li>
         <li>Username</li>
