@@ -2,8 +2,6 @@
  * @jest-environment jsdom
  */
 
-// use jest test to test home page
-// block27D for reference
 import { Provider } from 'react-redux';
 import store from '../redux/store';
 import { BrowserRouter } from 'react-router-dom';
