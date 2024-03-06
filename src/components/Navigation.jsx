@@ -1,4 +1,7 @@
+// react
 import { NavLink, useNavigate } from "react-router-dom";
+
+// assets
 import logo from '../assets/logo.svg';
 
 function Navigation(props){

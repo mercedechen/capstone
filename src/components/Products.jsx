@@ -1,6 +1,9 @@
+// react
 import { useProductsQuery } from '../redux/api';
-import { Link } from 'react-router-dom';
 import { useState } from 'react'
+import { Link } from 'react-router-dom';
+
+// components
 import Search from './Search';
 import Categories from './Categories';
 
@@ -9,8 +12,6 @@ function Products() {
   const { data, error, isLoading } = useProductsQuery();
 
   const [ searchedProducts, setSearchedProducts ] = useState([]);
-  
-  const [ filteredProducts, setFilteredProducts ] = useState([]);
 
   if (isLoading) {
     return <p>Loading Products...</p>
@@ -22,12 +23,9 @@ function Products() {
   
   return (
     <div>
-      <div className="searchbar">
+      <div className="options">
+        <Categories data={data}/>
         <Search data={data} setSearchedProducts={setSearchedProducts}/>
-      </div>
-
-      <div className="category">
-        <Categories data={data} setFilteredProducts={setFilteredProducts}/>
       </div>
 
       <div className="products">

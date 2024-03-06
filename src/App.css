@@ -1,9 +1,10 @@
 #root {
+  max-width: 1280px;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   background-color: #ffffff;
-  max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
+  color: #353535;
   text-align: center;
   line-height: 1.5;
   font-weight: 400;
@@ -15,10 +16,19 @@ a {
   text-decoration: inherit;
 }
 
+button {
+  font-family: inherit;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+
+/* Navigation */
 nav {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 20px;
 }
 
 nav a {
@@ -34,6 +44,34 @@ nav a {
   border-radius: 0 0 25px 25px;
   padding: 13px 30px;
   width: 117px;
+}
+
+/* Categories (Sorting, Search & Filter) */
+.options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #D9D9D9;
+  border-radius: 25px;
+  font-size: 10pt;
+  height: 23px;
+}
+
+.filter button {
+  color: #353535;
+  font-weight: 400;
+  margin: 0 25px;
+}
+
+.searchBar {
+  margin-right: 23px;
+}
+
+.searchBar input {
+  border-radius: 25px;
+  border: none;
+  padding-left: 15px;
+  color: #353535;
 }
 
 form {

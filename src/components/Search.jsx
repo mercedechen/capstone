@@ -14,7 +14,7 @@ function Search({ data, setSearchedProducts }) {
   };
 
   return (
-    <div>
+    <div className="searchBar">
       <form>
         <input 
           type="text" 
