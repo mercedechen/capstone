@@ -1,4 +1,5 @@
 import { NavLink, useNavigate } from "react-router-dom";
+import logo from '../assets/logo.svg';
 
 function Navigation(props){
 
@@ -12,7 +13,9 @@ function Navigation(props){
   if (props.token) {
     return (
       <nav>
-        <NavLink to="/">SHOP</NavLink>
+        <NavLink to="/">
+          <img src={logo} className="logo"/>
+        </NavLink>
         <NavLink to="/account">Account</NavLink>
         <a onClick={logoutUser}>Logout</a>
         <NavLink to="/cart">Cart</NavLink>
@@ -22,7 +25,9 @@ function Navigation(props){
 
   return (
     <nav>
-      <NavLink to="/">SHOP</NavLink>
+      <NavLink to="/">
+        <img src={logo} className="logo"/>
+      </NavLink>
       <NavLink to="/login">Login</NavLink>
       <NavLink to="/register">Register</NavLink>
       <NavLink to="/cart">Cart</NavLink>
