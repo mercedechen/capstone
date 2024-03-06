@@ -32,7 +32,7 @@ function Products() {
         {
           data.length?
           searchedProducts.length ?
-            searchedProducts.map((product, id) => {
+            searchedProducts.map((product) => {
               return (
                 <div className="product" key={product.id}>
                   <Link to={`/${product.id}`}>

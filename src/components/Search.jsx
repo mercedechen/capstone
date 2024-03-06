@@ -2,7 +2,7 @@ function Search({ data, setSearchedProducts }) {
 
   const searchProducts = (searchValue) => {
     if (!searchValue) {
-      setSearchProducts([])
+      setSearchedProducts([])
     } else {
       const searchedProducts = data.filter((product) => {
         return (
