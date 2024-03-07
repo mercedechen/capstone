@@ -48,9 +48,6 @@ function Navigation(props){
         <NavLink to="/login">
           Login
         </NavLink>
-        <NavLink to="/cart">
-          Cart
-        </NavLink>
       </div>
     </nav>
   )
