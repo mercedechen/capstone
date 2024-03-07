@@ -8,44 +8,40 @@ function Categories({ data, setFilteredProducts }) {
   const filterByMen = () => {
     const men = data.filter((product) => {
       return (
-        product.category.toLowerCase().includes(`men's clothing`)
+        product.category.toLowerCase() === (`men's clothing`)
       )
     });
     setFilteredProducts(men);
-    console.log(`men's clothing`, men)
   }
 
   // Displays products with category: women's clothing
   const filterByWomen = () => {
     const women = data.filter((product) => {
       return (
-        product.category.toLowerCase().includes(`women's clothing`)
+        product.category.toLowerCase() === (`women's clothing`)
       )
     });
     setFilteredProducts(women);
-    console.log(`women's clothing`, women);
   }
 
   // Displays products with category: jewelery
   const filterByJewelery = () => {
     const jewelery = data.filter((product) => {
       return (
-        product.category.toLowerCase().includes("jewelery")
+        product.category.toLowerCase() === ("jewelery")
       )
     });
     setFilteredProducts(jewelery);
-    console.log('jewelery', jewelery);
   }
 
   // Displays products with category: electronics
   const filterByElectronics = () => { 
     const electronics = data.filter((product) => {
       return (
-        product.category.toLowerCase().includes("electronics")
+        product.category.toLowerCase() === ("electronics")
         )
       });
       setFilteredProducts(electronics);
-      console.log('electronics', electronics);
   }
 
   return (

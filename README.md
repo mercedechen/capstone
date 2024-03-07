@@ -2,7 +2,7 @@
 
 ## Overview
 
-This will be a fully-functional front-end ecommerce application that allows users to view available products, create a personalized account, and place orders.
+This will be a fully-functional front-end ecommerce application that allows users to view available products and add items to cart.
 
 Built with React, JavaScript, HTML5, CSS
 
@@ -14,7 +14,8 @@ As a user (not logged in):
 
 As a user (logged in):
 * same access as a user not logged in
+* add products to cart
+* check out cart items
 * view account details and order history
 * update account details
-* add products to cart
 
