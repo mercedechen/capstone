@@ -15,24 +15,22 @@ function Navigation(props){
 
   if (props.token) {
     return (
-      <div>
-        <div className="logo">
-          <NavLink to="/">
+      <nav>
+        <div className="logo-box">
+          <NavLink to="/" className="logo">
             <img src={logo}/>
           </NavLink>
         </div>
-        <nav>
-          <NavLink to="/account">
-            Account
-          </NavLink>
-          <a onClick={logoutUser}>
-            Logout
-          </a>
-          <NavLink to="/cart">
-            Cart
-          </NavLink>
-        </nav>
-      </div>
+        <NavLink to="/account">
+          Account
+        </NavLink>
+        <a onClick={logoutUser}>
+          Logout
+        </a>
+        <NavLink to="/cart">
+          Cart
+        </NavLink>
+      </nav>
     )
   }
 
@@ -44,12 +42,12 @@ function Navigation(props){
         </NavLink>
       </div>
       <div>
-        <NavLink to="/account">
-          Account
+        <NavLink to="/register">
+          Register
         </NavLink>
-        <a onClick={logoutUser}>
-          Logout
-        </a>
+        <NavLink to="/login">
+          Login
+        </NavLink>
         <NavLink to="/cart">
           Cart
         </NavLink>

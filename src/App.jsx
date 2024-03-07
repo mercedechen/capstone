@@ -19,9 +19,7 @@ function App() {
   return (
     <div>
       <BrowserRouter>
-        <header>
-          <Navigation token={token} setToken={setToken}/>
-        </header>
+        <Navigation token={token} setToken={setToken}/>
 
         <Routes>
           <Route 

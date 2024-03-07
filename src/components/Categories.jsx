@@ -7,11 +7,11 @@ function Categories({ data, setFilteredProducts }) {
 
   return (
     <div className="filter">
-      <a href="" onClick={() => filterProductsByCategory(null)}>All</a>
-      <a href="" onClick={() => filterProductsByCategory("men's clothing")}>Men's Clothing</a>
-      <a href="">Women's Clothing</a>
-      <a href="">Jewelry</a>
-      <a href="" onClick={() => filterProductsByCategory()}>Electronics</a>
+      <button>All</button>
+      <button>Men's Clothing</button>
+      <button>Women's Clothing</button>
+      <button>Jewelry</button>
+      <button>Electronics</button>
     </div>
   )
 }

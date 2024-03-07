@@ -11,6 +11,7 @@ function Products() {
 
   const { data, error, isLoading } = useProductsQuery();
 
+  // Functionality comes from Search component.
   const [ searchedProducts, setSearchedProducts ] = useState([]);
 
   if (isLoading) {

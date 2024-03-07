@@ -36,7 +36,7 @@ nav a {
 }
 
 .logo-box {
-  margin: 0 600px 20px 0;
+  margin: 0 auto 20px 0;
 }
 
 .logo {
@@ -57,7 +57,7 @@ nav a {
   height: 23px;
 }
 
-.filter a {
+.filter button {
   color: #353535;
   font-weight: 400;
   margin: 0 25px;
