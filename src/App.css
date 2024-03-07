@@ -10,15 +10,18 @@
   font-weight: 400;
 }
 
+a, button {
+  cursor: pointer;
+  color: #353535;
+}
+
 a {
   font-weight: 600;
-  color: #353535;
   text-decoration: inherit;
 }
 
 button {
   font-family: inherit;
-  cursor: pointer;
   background-color: transparent;
   border: none;
 }
@@ -58,9 +61,12 @@ nav a {
 }
 
 .filter button {
-  color: #353535;
   font-weight: 400;
   margin: 0 25px;
+}
+
+.filter button:hover {
+  font-weight: 600;
 }
 
 .searchBar {

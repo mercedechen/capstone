@@ -1,17 +1,18 @@
 function Categories({ data, setFilteredProducts }) {
-  // wip
-  const filterProductsByCategory = (category) => {
-    const filterProducts = data.filter((product) => product.category.toLowerCase() === category);
-    setFilteredProducts(filterProducts);
+
+  const filterProducts = () => { 
+    const filterByElectronics = data.filter((product) => {
+      return (
+        product.category.toLowerCase().includes("electronics")
+      )
+    })
+    setFilteredProducts(filterByElectronics);
+    console.log('electronics', filterByElectronics);
   }
 
   return (
     <div className="filter">
-      <button>All</button>
-      <button>Men's Clothing</button>
-      <button>Women's Clothing</button>
-      <button>Jewelry</button>
-      <button>Electronics</button>
+      <button onClick={filterProducts}>Electronics</button>
     </div>
   )
 }

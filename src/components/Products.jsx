@@ -14,6 +14,9 @@ function Products() {
   // Functionality comes from Search component.
   const [ searchedProducts, setSearchedProducts ] = useState([]);
 
+  // Functionality comes from Categories component.
+  const [ filteredProducts, setFilteredProducts ] = useState([]);
+
   if (isLoading) {
     return <p>Loading Products...</p>
   }
@@ -25,38 +28,51 @@ function Products() {
   return (
     <div>
       <div className="options">
-        <Categories data={data}/>
+        <Categories data={data} setFilteredProducts={setFilteredProducts}/>
+
         <Search data={data} setSearchedProducts={setSearchedProducts}/>
       </div>
 
       <div className="products">
         {
           data.length?
+          filteredProducts.length?
+          filteredProducts.map((product) => {
+            return (
+              <div className="product" key={product.id}>
+                <Link to={`/${product.id}`}>
+                  <img src={product.image} alt={product.title}/>
+                  <h2>{product.title}</h2>
+                </Link>
+              </div>
+            )
+          }) :
           searchedProducts.length ?
-            searchedProducts.map((product) => {
-              return (
-                <div className="product" key={product.id}>
-                  <Link to={`/${product.id}`}>
-                    <img src={product.image} alt={product.title}/>
-                    <h2>{product.title}</h2>
-                  </Link>
-                </div>
-              )
-            }) :
-            data?.map((product) => {
-              return (
-                <div className="product" key={product.id}>
-                  <Link to={`/${product.id}`}>
-                    <img src={product.image} alt={product.title}/>
-                    <h2>{product.title}</h2>
-                  </Link>
-                </div>
-              )
-            }) : <p>Loading Products...</p>
-          }
+          searchedProducts.map((product) => {
+            return (
+              <div className="product" key={product.id}>
+                <Link to={`/${product.id}`}>
+                  <img src={product.image} alt={product.title}/>
+                  <h2>{product.title}</h2>
+                </Link>
+              </div>
+            )
+          }) 
+          :
+          data?.map((product) => {
+            return (
+              <div className="product" key={product.id}>
+                <Link to={`/${product.id}`}>
+                  <img src={product.image} alt={product.title}/>
+                  <h2>{product.title}</h2>
+                </Link>
+              </div>
+            )
+          }) : <p>Loading Products...</p>
+        }
       </div>
     </div>
-  );
+  )
 }
 
 export default Products;

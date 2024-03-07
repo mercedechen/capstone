@@ -27,8 +27,6 @@ function Account(props) {
 
   const { data, error, isLoading } = useAccountQuery(props.token);
 
-  console.log('data', data);
-
   if (isLoading) {
     return <p>Loading Account Details...</p>
   }
