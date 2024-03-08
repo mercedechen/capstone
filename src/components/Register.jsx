@@ -4,8 +4,10 @@ import { useState } from 'react';
 // api
 import { useRegisterMutation } from '../redux/api';
 
+// Registering will return successful 200 status but nothing will be inserted into the database. Accessing the new id will return 404 error.
 function Register(props) {
-  // variables
+
+  // Database structure of adding new user contains email, username, password, name (first and last), address (city, street, number, zipcode, geolocation), phone. Some data will be "" because the register form created on the mock ecommerce site does not request for this info.
   const [ userInfo, setUserInfo ] = useState({
     name: {
       firstname: "",
@@ -14,16 +16,9 @@ function Register(props) {
     email: "",
     username: "",
     password: "",
-    // address: {
-    //   city: "",
-    //   street: "",
-    //   number: "",
-    //   zipcode: "",
-    // },
-    // phone: "",
   });
   
-  // must match the endpoint name
+  // "register" must match the endpoint name from redux
   const [ register ] = useRegisterMutation(userInfo);
   const [ errorMsg, setErrorMsg ] = useState(null);
   
@@ -58,38 +53,6 @@ function Register(props) {
           lastname: e.target.value
         }
       });
-    // } else if (e.target.name === "number") {
-    //   setUserInfo({
-    //     ...userInfo,
-    //     address: {
-    //       ...userInfo.address,
-    //       number: e.target.value
-    //     }
-    //   });
-    // } else if (e.target.name === "street") {
-    //   setUserInfo({
-    //     ...userInfo,
-    //     address: {
-    //       ...userInfo.address,
-    //       street: e.target.value
-    //     }
-    //   });
-    // } else if (e.target.name === "city") {
-    //   setUserInfo({
-    //     ...userInfo,
-    //     address: {
-    //       ...userInfo.address,
-    //       city: e.target.value
-    //     }
-    //   });
-    // } else if (e.target.name == "zipcode") {
-    //   setUserInfo({
-    //     ...userInfo,
-    //     address: {
-    //       ...userInfo.address,
-    //       zipcode: e.target.value
-    //     }
-    //   });
     } else {
       setUserInfo({
         ...userInfo,
@@ -99,7 +62,7 @@ function Register(props) {
   }
 
   return (
-    <>
+    <div className="registration">
       <h2>Create an Account</h2>
 
       {/* check ? true : false */}
@@ -151,48 +114,10 @@ function Register(props) {
             placeholder="Password"
           />
         </label>
-        {/* <label>Address
-          <input
-            type="number"
-            name="number"
-            placeholder="Number"
-            value={userInfo.address.number}
-            onChange={onUserInput}
-          />
-          <input
-            type="text"
-            name="street"
-            placeholder="Street"
-            value={userInfo.address.street}
-            onChange={onUserInput}
-          />
-          <input
-            type="text"
-            name="city"
-            placeholder="City"
-            value={userInfo.address.city}
-            onChange={onUserInput}
-          />
-          <input
-            type="number"
-            name="zipcode"
-            placeholder="Zip Code"
-            value={userInfo.address.zipcode}
-            onChange={onUserInput}
-          />
-        </label>
-        <label>Phone
-          <input
-            type="tel"
-            name="phone"
-            placeholder="Phone"
-            value={userInfo.phone}
-            onChange={onUserInput}
-          />
-        </label> */}
+
         <button>Submit</button>
       </form>
-    </>
+    </div>
   )
 }
 

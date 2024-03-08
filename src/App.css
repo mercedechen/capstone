@@ -188,17 +188,52 @@ form {
   font-size: 8pt;
 }
 
-.productDetails button {
+.productDetails button, .registration button {
   font-size: 14px;
-  margin-top: 25px;
   padding: 10px;
   width: 100%;
   background-color: #284B63;
   color: #ffffff;
 }
 
+.productDetails button {
+  margin-top: 25px;
+}
+
 .return {
   font-weight: 400;
   font-size: 8pt;
   text-transform: uppercase;
+}
+
+/* Registration */
+
+.registration {
+  text-align: left;
+  width: 372px;
+  margin: auto;
+}
+
+.registration form {
+  margin-top: 20px;
+}
+
+.registration label {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+}
+
+.registration input {
+  font-family: inherit;
+  font-size: 14px;
+  height: 25px;
+  border: none;
+  background-color: #D9D9D9;
+  margin: 10px 0 15px 0;
+  padding-left: 10px;
+}
+
+.registration button {
+  margin-top: 10px;
 }
