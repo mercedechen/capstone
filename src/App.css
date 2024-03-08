@@ -188,7 +188,7 @@ form {
   font-size: 8pt;
 }
 
-.productDetails button, .registration button {
+.productDetails button, .registration button, .login button {
   font-size: 14px;
   padding: 10px;
   width: 100%;
@@ -206,25 +206,25 @@ form {
   text-transform: uppercase;
 }
 
-/* Registration */
+/* Registration and Login */
 
-.registration {
+.registration, .login {
   text-align: left;
   width: 372px;
   margin: auto;
 }
 
-.registration form {
+.registration form, .login form {
   margin-top: 20px;
 }
 
-.registration label {
+.registration label, .login label {
   display: flex;
   flex-direction: column;
   font-size: 14px;
 }
 
-.registration input {
+.registration input, .login input {
   font-family: inherit;
   font-size: 14px;
   height: 25px;
@@ -234,6 +234,6 @@ form {
   padding-left: 10px;
 }
 
-.registration button {
+.registration button, .login button {
   margin-top: 10px;
 }

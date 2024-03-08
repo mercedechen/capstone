@@ -115,7 +115,7 @@ function Register(props) {
           />
         </label>
 
-        <button>Submit</button>
+        <button>Sign Up</button>
       </form>
     </div>
   )

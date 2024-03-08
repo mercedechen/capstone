@@ -37,7 +37,7 @@ function Login(props) {
   };
 
   return (
-    <>
+    <div className="login">
       <h2>Returning User</h2>
 
       { errorMsg ? <p>Error: {errorMsg}</p> : <span /> }
@@ -61,9 +61,10 @@ function Login(props) {
             onChange={onUserInput}
           />
         </label>
+        
         <button>Login</button>
       </form>
-    </>
+    </div>
   )
 }
 
