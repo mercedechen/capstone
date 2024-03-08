@@ -53,11 +53,6 @@ export const apiSlice = createApi({
       }),
     }),
 
-    // category: builder.query({
-    //   query: (category) => ({
-    //     url: `products/${category}`
-    //   }),
-    // }),
   }),
 });
 
@@ -67,5 +62,5 @@ export const {
   useAccountQuery,
   useProductsQuery,
   useProductQuery,
-  useCategoryQuery,
+  useCartQuery,
  } = apiSlice;

@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 // components
 import Search from './Search';
 import Categories from './Categories';
+import Sort from './Sort';
 
 function Products() {
 
@@ -27,10 +28,14 @@ function Products() {
   
   return (
     <div>
-      <div className="options">
-        <Categories data={data} setFilteredProducts={setFilteredProducts}/>
+      <div>
+        <div className="options">
+          <Categories data={data} setFilteredProducts={setFilteredProducts}/>
 
-        <Search data={data} setSearchedProducts={setSearchedProducts}/>
+          <Search data={data} setSearchedProducts={setSearchedProducts}/>
+        </div>
+
+        <Sort/>
       </div>
 
       <div className="products">

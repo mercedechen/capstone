@@ -81,22 +81,47 @@ nav a {
   color: #353535;
 }
 
+.sort-box {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 14px;
+}
+
+h4, .sort {
+  text-transform: uppercase;
+  font-size: 8pt;
+}
+
+h4 {
+  margin: 0;
+  font-weight: 400;
+}
+
+.sort {
+  border-style: none;
+  font-weight: 600;
+  color: #3C6E71;
+  width: 138px;
+}
+
 form {
   display: flex;
   flex-direction: column;
 }
 
+/* Products */
 .products {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 50px 0;
+  margin: 30px 0;
   padding: 0;
 }
 
 .product {
   width: 200px;
-  margin: 22px 26px;
+  margin: 25px;
+  padding: 10px;
 }
 
 .product img {
@@ -105,6 +130,7 @@ form {
 
 .product h2 {
   font-size: 12pt;
+  font-weight: 600;
 }
 
 .filter {
