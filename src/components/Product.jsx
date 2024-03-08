@@ -21,16 +21,33 @@ function Product() {
   }
 
   return (
-    <div>
+    <div className="productView">
       <img src ={data.image}/> 
-      <h2>{data.title}</h2>
-      <h3>Category: {data.category}</h3>
-      <h3>Count: {data.rating.count}</h3>
-      <h3>Rating: {data.rating.rate}</h3>
-      <h3>{data.description}</h3>
-      <h3>Price: {data.price}</h3>
-      <h3><button onClick={() => dispatch(addProduct(data))}>Add to Cart</button></h3>
-      <Link to="/">Go Back</Link>
+      <div className="productDetails">
+        <h2>{data.title}</h2>
+
+        <div className="subDetails">
+          <h3>Category: {data.category}</h3>
+          <h3>Count: {data.rating.count}</h3>
+          <h3>Rating: {data.rating.rate}</h3>
+        </div>
+
+        <div className="details">
+          <h3>Description:</h3>
+          <p>{data.description}</p>
+        </div>
+
+        <div className="details">
+          <h3>Price:</h3>
+          <p>${data.price}</p>
+        </div>
+
+        <button onClick={() => dispatch(addProduct(data))}>
+          Add to Cart
+        </button>
+
+        <Link to="/" className="return">Go Back</Link>
+      </div>
     </div>
   )
 }
