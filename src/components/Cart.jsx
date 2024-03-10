@@ -3,13 +3,14 @@ import { removeProduct, getCart } from "../redux/cart";
 
 function Cart(props) {
 
+  if (!props.token) {
+    return <h3>You must be logged in to perform this action.</h3>
+  }
+
   const cart = useSelector(getCart);
 
   const dispatch = useDispatch();
 
-  if (!props.token) {
-    return <h2>Not found</h2>
-  }
 
 // localStorage resides in Cart component where the products are stored in the cart
 console.log(localStorage);
