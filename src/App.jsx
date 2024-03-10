@@ -44,7 +44,7 @@ function App() {
           />
           <Route
             path="/cart"
-            element={<Cart />}
+            element={<Cart token={token}/>}
           />
         </Routes>
       </BrowserRouter>

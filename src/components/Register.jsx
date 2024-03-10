@@ -26,6 +26,12 @@ function Register(props) {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
+    if (userInfo.username.length < 3 || userInfo.password.length < 6) {
+      setErrorMsg("Username or password must be greater than 6 characters.")
+      // Stops function.
+      return
+    }
+
     const { data, error } = await register(userInfo);
     
     if (error) {
@@ -39,7 +45,9 @@ function Register(props) {
   const onUserInput = (e) => {
     if (errorMsg) {
       setErrorMsg(null);
-    } else if (e.target.name === "firstname"){
+    } 
+    
+    if (e.target.name === "firstname"){
       setUserInfo({
         ...userInfo,
         name: {

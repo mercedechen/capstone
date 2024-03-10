@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { useLoginMutation } from '../redux/api';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { setCart } from '../redux/cart';
 
 function Login(props) {
   const [ userInfo, setUserInfo ] = useState({
@@ -12,6 +14,8 @@ function Login(props) {
   const navigate = useNavigate();
   const [ errorMsg, setErrorMsg ] = useState(null);
 
+  const dispatch = useDispatch();
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -21,6 +25,11 @@ function Login(props) {
       setErrorMsg(error.data);
     } else {
       props.setToken(data.token);
+      const existingCart = JSON.parse(localStorage.getItem("cart"));
+      console.log('existing cart', existingCart);
+      if (existingCart) {
+        dispatch(setCart(existingCart))
+      }
       navigate("/account");
     }
   };

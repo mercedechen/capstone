@@ -43,7 +43,7 @@ function Product() {
 
         <div className="details">
           <h3>Price:</h3>
-          <p>${data.price}</p>
+          <p>${data.price.toFixed(2)}</p>
         </div>
 
         <button onClick={() => handleClick()}>
@@ -52,6 +52,7 @@ function Product() {
 
         <div className='response'>
           {error ? <p>Oops! An unexpected error has occurred. Please try again later.</p> : <span />}
+          
           {success ? <p>{success}</p> : <span />}
         </div>
 

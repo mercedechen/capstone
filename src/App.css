@@ -159,8 +159,16 @@ form {
 .productDetails button {
   display: block;
   font-weight: 600;
-  margin-bottom: 20px;
+  margin: 25px 0 20px 0;
   font-size: 12pt;
+}
+
+.productDetails button, .registration button, .login button, .summary button {
+  font-size: 14px;
+  padding: 10px;
+  width: 100%;
+  background-color: #284B63;
+  color: #ffffff;
 }
 
 .details {
@@ -189,17 +197,6 @@ form {
   font-size: 8pt;
 }
 
-.productDetails button, .registration button, .login button {
-  font-size: 14px;
-  padding: 10px;
-  width: 100%;
-  background-color: #284B63;
-  color: #ffffff;
-}
-
-.productDetails button {
-  margin-top: 25px;
-}
 
 .return {
   font-weight: 400;
@@ -242,4 +239,23 @@ form {
 .response {
   margin-top: 20px;
   text-align: center;
+}
+
+/* Cart */
+.cartItems {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+}
+
+.itemInCart {
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+  padding: 20px;
+}
+
+.itemInCart img {
+  width: 200px;
 }
