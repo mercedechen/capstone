@@ -55,15 +55,17 @@ function Product(props) {
         </button>
 
         <div className='response'>
+          {/* If unable to get product data from API, checks for error and if true, renders error message, else empty span element */}
           {error ? <p>Oops! An unexpected error has occurred. Please try again later.</p> : <span />}
 
+          {/* If user is not logged in, error msg is set to errorMsg and renders, else empty span element */}
           {errorMsg ? <p>{errorMsg}</p> : <span />}
           
+          {/* If user is logged in and adds item to cart, success message is rendered */}
           {success ? <p>{success}</p> : <span />}
         </div>
 
         <Link to="/" className="return">Go Back</Link>
-
       </div>
     </div>
   )
