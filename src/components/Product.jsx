@@ -1,8 +1,8 @@
 import { useProductQuery } from '../redux/api';
-import { useParams } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addProduct } from '../redux/cart';
+import { useState } from 'react';
 
 function Product() {
   
@@ -12,12 +12,17 @@ function Product() {
 
   const { data, error, isLoading } = useProductQuery(id);
 
+  const [ success, setSuccess ] = useState(null);
+
   if (isLoading) {
     return <p>Loading Product...</p>
   }
 
-  if (error) {
-    return <p>Oops! An unexpected error has occurred. Please try again later.</p>
+  const handleClick = (event) => {
+    if (!error) {
+      dispatch(addProduct(data))
+      setSuccess('Item added to cart.')
+    }
   }
 
   return (
@@ -41,11 +46,17 @@ function Product() {
           <p>${data.price}</p>
         </div>
 
-        <button onClick={() => dispatch(addProduct(data))}>
+        <button onClick={() => handleClick()}>
           Add to Cart
         </button>
 
+        <div className='response'>
+          {error ? <p>Oops! An unexpected error has occurred. Please try again later.</p> : <span />}
+          {success ? <p>{success}</p> : <span />}
+        </div>
+
         <Link to="/" className="return">Go Back</Link>
+
       </div>
     </div>
   )
