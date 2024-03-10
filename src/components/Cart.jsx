@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import { removeProduct, getCart } from "../redux/cart";
 
-function Cart() {
+function Cart(props) {
   const cart = useSelector(getCart)
   console.log('cart', cart)
   const dispatch = useDispatch();

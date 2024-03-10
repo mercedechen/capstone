@@ -28,8 +28,7 @@ function Product() {
 
         <div className="subDetails">
           <h3>Category: {data.category}</h3>
-          <h3>Count: {data.rating.count}</h3>
-          <h3>Rating: {data.rating.rate}</h3>
+          <h3>Rating: {data.rating.rate} ({data.rating.count} Reviews)</h3>
         </div>
 
         <div className="details">

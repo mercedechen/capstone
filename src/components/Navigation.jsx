@@ -13,7 +13,7 @@ function Navigation(props){
     navigate("/");
   }
 
-  if (props.token) {
+  if(props.token){
     return (
       <nav>
         <div className="logo-box">

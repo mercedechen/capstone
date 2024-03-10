@@ -21,6 +21,7 @@ function Register(props) {
   // "register" must match the endpoint name from redux
   const [ register ] = useRegisterMutation(userInfo);
   const [ errorMsg, setErrorMsg ] = useState(null);
+  const [ success, setSuccess ] = useState(null);
   
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -31,10 +32,11 @@ function Register(props) {
       setErrorMsg(error);
     } else {
       props.setToken(data.token)
+      setSuccess('Thank you for signing up! Please proceed to log in.')
     }
   };
   
-  function onUserInput(e){
+  const onUserInput = (e) => {
     if (errorMsg) {
       setErrorMsg(null);
     } else if (e.target.name === "firstname"){
@@ -65,9 +67,6 @@ function Register(props) {
     <div className="registration">
       <h2>Create an Account</h2>
 
-      {/* check ? true : false */}
-      { errorMsg ? <p>Error: {errorMsg}</p> : <span /> }
-
       <form onSubmit={handleSubmit}>
         <label>First Name
           <input 
@@ -76,6 +75,7 @@ function Register(props) {
             placeholder="First Name" 
             value={userInfo.name.firstname} 
             onChange={onUserInput}
+            required
           />
         </label>
         <label>Last Name
@@ -85,6 +85,7 @@ function Register(props) {
             placeholder="Last Name"
             value={userInfo.name.lastname}
             onChange={onUserInput}
+            required
           />
         </label>
         <label>Email
@@ -103,6 +104,7 @@ function Register(props) {
             value={userInfo.username}
             onChange={onUserInput}
             placeholder="Username"
+            required
           />
         </label>
         <label>Password
@@ -112,11 +114,19 @@ function Register(props) {
             value={userInfo.password}
             onChange={onUserInput}
             placeholder="Password"
+            required
           />
         </label>
 
         <button>Sign Up</button>
       </form>
+
+      <div className="response">
+        {/* check ? true : false */}
+        { errorMsg ? <p>Oops! Unable to create an account right now. Please try again later. {errorMsg}</p> : <span /> }
+
+        {success ? <p>{success}</p> : <span />}
+      </div>
     </div>
   )
 }

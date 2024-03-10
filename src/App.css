@@ -41,7 +41,7 @@ nav {
 }
 
 nav a {
-  color: #3C6E71;
+  color: #284B63;
   margin: 25px;
 }
 
@@ -81,6 +81,7 @@ nav a {
 }
 
 .searchBar input {
+  font-family: inherit;
   border-radius: 25px;
   border: none;
   padding-left: 15px;
@@ -236,4 +237,8 @@ form {
 
 .registration button, .login button {
   margin-top: 10px;
+}
+
+.response {
+  margin-top: 20px;
 }
