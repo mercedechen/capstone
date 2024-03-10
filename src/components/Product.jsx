@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { addProduct } from '../redux/cart';
 import { useState } from 'react';
 
-function Product() {
+function Product(props) {
   
   let { id } = useParams();
 
@@ -12,22 +12,26 @@ function Product() {
 
   const { data, error, isLoading } = useProductQuery(id);
 
+  const [ errorMsg, setErrorMsg ] = useState(null);
   const [ success, setSuccess ] = useState(null);
 
   if (isLoading) {
     return <p>Loading Product...</p>
-  }
+  };
 
-  const handleClick = (event) => {
-    if (!error) {
-      dispatch(addProduct(data))
-      setSuccess('Item added to cart.')
-    }
-  }
+  const handleClick = () => {
+    if (!props.token){
+      setErrorMsg('You must be logged in to perform this action.');
+    } else {
+      dispatch(addProduct(data));
+      setSuccess('Item added to cart.');
+    };
+  };
 
   return (
-    <div className="productView">
+    <div className="productView" key={data.id}>
       <img src ={data.image}/> 
+      
       <div className="productDetails">
         <h2>{data.title}</h2>
 
@@ -52,6 +56,8 @@ function Product() {
 
         <div className='response'>
           {error ? <p>Oops! An unexpected error has occurred. Please try again later.</p> : <span />}
+
+          {errorMsg ? <p>{errorMsg}</p> : <span />}
           
           {success ? <p>{success}</p> : <span />}
         </div>
@@ -61,6 +67,6 @@ function Product() {
       </div>
     </div>
   )
-}
+};
 
 export default Product;

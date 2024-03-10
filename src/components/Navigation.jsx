@@ -35,6 +35,10 @@ function Navigation(props){
         <NavLink to="/cart">
           Cart
         </NavLink>
+
+        <NavLink to="/checkout">
+          Checkout
+        </NavLink>
       </nav>
     )
   }

@@ -1,5 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 import { removeProduct, getCart } from "../redux/cart";
+import { Link } from "react-router-dom";
 
 function Cart(props) {
 
@@ -16,7 +17,7 @@ function Cart(props) {
 console.log(localStorage);
 
 // localStorage.setItem("key", "value") where key (name of the argument) and value (data of the argument) are strings. If object or array, must use JSON.stringify().
-// Resets cart to where the state it was at.
+// Sets cart to the state it was at.
 localStorage.setItem("cart", JSON.stringify(cart))
 
 return (
@@ -45,7 +46,7 @@ return (
         })
       }
 
-      {/* <div className="summary">
+      <div className="summary">
         <div className="details">
           <h3>Subtotal:</h3>
           <p>$</p>
@@ -57,7 +58,7 @@ return (
         </div>
         
         <button>Check Out</button>
-      </div> */}
+      </div>
     </div>
   )
 }

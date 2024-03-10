@@ -40,7 +40,7 @@ function App() {
           />
           <Route 
             path="/:id" 
-            element={<Product />}
+            element={<Product token={token}/>}
           />
           <Route
             path="/cart"
