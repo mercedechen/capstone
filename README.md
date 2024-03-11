@@ -16,6 +16,5 @@ As a user (logged in):
 * same access as a user not logged in
 * add/remove products to cart
 * check out cart items
-* view account details and order history
-* update account details
+* view account details
 
