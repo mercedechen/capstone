@@ -19,6 +19,11 @@ function Product(props) {
     return <p>Loading Product...</p>
   };
 
+  // If unable to get product data from API, checks for error and if true, renders error message, else empty span element
+  if (error) {
+    return <p>Oops! An unexpected error has occurred. Please try again later.</p>
+  };
+
   const handleClick = () => {
     if (!props.token){
       setErrorMsg('You must be logged in to perform this action.');
@@ -29,7 +34,7 @@ function Product(props) {
   };
 
   return (
-    <div className="productView" key={data.id}>
+    <div className="productView">
       <img src ={data.image}/> 
       
       <div className="productDetails">
@@ -55,9 +60,6 @@ function Product(props) {
         </button>
 
         <div className='response'>
-          {/* If unable to get product data from API, checks for error and if true, renders error message, else empty span element */}
-          {error ? <p>Oops! An unexpected error has occurred. Please try again later.</p> : <span />}
-
           {/* If user is not logged in, error msg is set to errorMsg and renders, else empty span element */}
           {errorMsg ? <p>{errorMsg}</p> : <span />}
           

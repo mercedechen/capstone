@@ -1,6 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
 import { removeProduct, getCart } from "../redux/cart";
-import { Link } from "react-router-dom";
 
 function Cart(props) {
 
@@ -12,44 +11,47 @@ function Cart(props) {
 
   const dispatch = useDispatch();
 
+  // localStorage resides in Cart component where the products are stored in the cart
+  // localStorage.setItem("key", "value") where key (name of the argument) and value (data of the argument) are strings. If object or array, must use JSON.stringify().
+  // Sets cart to the state it was at.
+  localStorage.setItem("cart", JSON.stringify(cart))
 
-// localStorage resides in Cart component where the products are stored in the cart
-console.log(localStorage);
+  const subtotal = () => {
 
-// localStorage.setItem("key", "value") where key (name of the argument) and value (data of the argument) are strings. If object or array, must use JSON.stringify().
-// Sets cart to the state it was at.
-localStorage.setItem("cart", JSON.stringify(cart))
+  }
 
-return (
-    <div className="cartItems">
-      {
-        cart.map((product) => {
-          return (
-            <div key={product.id} className="itemInCart">
-              <img src={product.image} alt={product.title}/>
-              <div className="productDetails">
-                <h2>{product.title}</h2>
-                <div className="details">
-                  <h3>Description:</h3>
-                  <p>{product.description}</p>
+  return (
+    <div>
+      <div className="cartItems">
+        {
+          cart.map((product) => {
+            return (
+              <div key={product.id} className="itemInCart">
+                <img src={product.image} alt={product.title}/>
+                <div className="productDetails">
+                  <h2>{product.title}</h2>
+                  <div className="details">
+                    <h3>Description:</h3>
+                    <p>{product.description}</p>
+                  </div>
+                  <div className="details">
+                    <h3>Price:</h3>
+                    <p>${product.price.toFixed(2)}</p>
+                  </div>
+                  <button onClick={() => {dispatch(removeProduct(product.id))}}>
+                    Dispatch Remove
+                  </button>
                 </div>
-                <div className="details">
-                  <h3>Price:</h3>
-                  <p>${product.price.toFixed(2)}</p>
-                </div>
-                <button onClick={() => {dispatch(removeProduct(product.id))}}>
-                  Dispatch Remove
-                </button>
               </div>
-            </div>
-          )
-        })
-      }
+            )
+          })
+        }
+      </div>
 
       <div className="summary">
         <div className="details">
           <h3>Subtotal:</h3>
-          <p>$</p>
+          <p>${subtotal}</p>
         </div>
 
         <div className="details">
@@ -57,7 +59,9 @@ return (
           <p>$</p>
         </div>
         
-        <button>Check Out</button>
+        <a href='/checkout'>
+          <button>Check Out</button>
+        </a>
       </div>
     </div>
   )

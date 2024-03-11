@@ -11,6 +11,7 @@ import Account from './components/Account.jsx';
 import Products from './components/Products.jsx';
 import Product from './components/Product.jsx';
 import Cart from './components/Cart.jsx';
+import Checkout from './components/Checkout.jsx';
 
 function App() {
 
@@ -45,6 +46,10 @@ function App() {
           <Route
             path="/cart"
             element={<Cart token={token}/>}
+          />
+          <Route
+            path="/checkout"
+            element={<Checkout token={token}/>}
           />
         </Routes>
       </BrowserRouter>

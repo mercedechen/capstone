@@ -25,11 +25,13 @@ function Login(props) {
       setErrorMsg(error.data);
     } else {
       props.setToken(data.token);
+
       const existingCart = JSON.parse(localStorage.getItem("cart"));
-      console.log('existing cart', existingCart);
+
       if (existingCart) {
         dispatch(setCart(existingCart))
       }
+      
       navigate("/account");
     }
   };

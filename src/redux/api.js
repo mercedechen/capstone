@@ -52,7 +52,6 @@ export const apiSlice = createApi({
         url: `/products/${id}`,
       }),
     }),
-
   }),
 });
 
@@ -61,6 +60,5 @@ export const {
   useLoginMutation,
   useAccountQuery,
   useProductsQuery,
-  useProductQuery,
-  useCartQuery,
+  useProductQuery
  } = apiSlice;

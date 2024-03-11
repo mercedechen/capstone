@@ -31,13 +31,11 @@ const cartSlice = createSlice({
     addProduct: (state, action) => {
       state.cart.push(action.payload);
     },
-    
     removeProduct: (state, action) => {
       state.cart = state.cart.filter((product) => {
         return product.id != action.payload
       })
     },
-
     setCart: (state, action) => {
       state.cart = action.payload
     }
