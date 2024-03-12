@@ -163,7 +163,7 @@ form {
   font-size: 12pt;
 }
 
-.productDetails button, .registration button, .login button, .summary button {
+.productDetails button, .registration button, .login button, .summary button, .account button {
   font-size: 14px;
   padding: 10px;
   width: 100%;
@@ -232,7 +232,7 @@ form {
   padding-left: 10px;
 }
 
-.registration button, .login button {
+.registration button, .login button, .account button {
   margin-top: 10px;
 }
 
@@ -240,6 +240,28 @@ form {
   margin-top: 20px;
   text-align: center;
 }
+
+/* Account */
+.account {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  text-align: left;
+  width: 372px;
+}
+
+.account h2 {
+  width: 372px;
+  text-align: left;
+  margin: 0 auto 20px auto;
+}
+
+.userDetail p {
+  border: 1px solid #D9D9D9;
+  margin: 10px 0 15px 0;
+  padding: 5px 0 5px 25px;
+}
+
 
 /* Cart */
 .cartItems {
@@ -259,3 +281,4 @@ form {
 .itemInCart img {
   width: 200px;
 }
+

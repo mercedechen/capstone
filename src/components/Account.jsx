@@ -1,3 +1,7 @@
+// React
+import { useState } from 'react';
+
+// Redux
 import { useAccountQuery } from "../redux/api";
 
 function Account(props) {
@@ -6,6 +10,7 @@ function Account(props) {
     return <h3>You must be logged in to perform this action.</h3>
   }
 
+  // data is an [] of {} and data[0].username is johnd
   const { data, error, isLoading } = useAccountQuery(props.token);
 
   if (isLoading) {
@@ -17,17 +22,46 @@ function Account(props) {
   }
 
   return (
-    <>
-      <h2>Welcome back!</h2>
-      <ul>
-        <li>First Name</li>
-        <li>Last Name</li>
-        <li>Email</li>
-        <li>Username</li>
-        <li>Password</li>
-        <li>Address</li>
-      </ul>
-    </>
+    <div className="account">
+      <h2>Welcome Back</h2>
+      {
+        data?.map((user) => {
+          return user.username === props.userInfo.username?
+          (
+            <div key={user.id}>
+              <div className="userDetail">
+                <h3>First Name:</h3>
+                <p>{user.name.firstname}</p>
+              </div>
+
+              <div className="userDetail">
+                <h3>Last Name:</h3>
+                <p>{user.name.lastname}</p>
+              </div>
+
+              <div className="userDetail">
+                <h3>Username:</h3>
+                <p>{user.username}</p>
+              </div>
+
+              <div className="userDetail">
+                <h3>Password:</h3>
+                <p>{user.password}</p>
+              </div>
+
+              <div className="userDetail">
+                <h3>Email:</h3>
+                <p>{user.email}</p>
+              </div>
+            </div>
+          ) : ( 
+            <span/>
+          )
+        })
+      }
+
+      <button>Edit</button>
+    </div>
   )
 }
 

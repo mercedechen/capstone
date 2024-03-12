@@ -1,16 +1,16 @@
+// React
 import { useState } from 'react';
-import { useLoginMutation } from '../redux/api';
 import { useNavigate } from 'react-router-dom';
+
+// Redux
+import { useLoginMutation } from '../redux/api';
 import { useDispatch } from 'react-redux';
 import { setCart } from '../redux/cart';
 
 function Login(props) {
-  const [ userInfo, setUserInfo ] = useState({
-    username: "",
-    password: ""
-  });
   
-  const [ login ] = useLoginMutation(userInfo);
+  console.log(props);
+  const [ login ] = useLoginMutation(props.userInfo);
   const navigate = useNavigate();
   const [ errorMsg, setErrorMsg ] = useState(null);
 
@@ -19,7 +19,7 @@ function Login(props) {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const { data, error } = await login(userInfo);
+    const { data, error } = await login(props.userInfo);
 
     if (error) {
       setErrorMsg(error.data);
@@ -40,8 +40,8 @@ function Login(props) {
     if (errorMsg) {
       setErrorMsg(null);
     } else {
-      setUserInfo({
-        ...userInfo,
+      props.setUserInfo({
+        ...props.userInfo,
         [e.target.name]: e.target.value,
       });
     };
@@ -59,7 +59,7 @@ function Login(props) {
             type="text"
             name="username"
             placeholder="Username"
-            value={userInfo.username}
+            value={props.userInfo.username}
             onChange={onUserInput}
           />
         </label>
@@ -68,7 +68,7 @@ function Login(props) {
             type="password"
             name="password"
             placeholder="Password"
-            value={userInfo.password}
+            value={props.userInfo.password}
             onChange={onUserInput}
           />
         </label>
