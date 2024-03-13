@@ -77,7 +77,7 @@ function App() {
           />
 
           <Route
-            path="/checkout"
+            path="/cart/checkout"
             element={<Checkout 
               token={token}
             />}

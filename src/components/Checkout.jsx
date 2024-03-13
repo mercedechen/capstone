@@ -10,7 +10,7 @@ function Checkout () {
     cardnumber: 1234567890,
   }
 
-  console.log('dummydata', dummyBill);
+  // console.log('dummydata', dummyBill);
 
   const [ billingInfo, setBillingInfo ] = useState({
     name: {
@@ -28,8 +28,8 @@ function Checkout () {
       zipcode: "",
     },
   });
-  console.log('billInfo', billingInfo);
-  console.log('shippingInfo', shippingInfo);
+  // console.log('billInfo', billingInfo);
+  // console.log('shippingInfo', shippingInfo);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -95,7 +95,7 @@ function Checkout () {
   return (
       <div>
         <h2>Checkout</h2>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="checkout">
           <label>First Name
             <input 
               type="text"

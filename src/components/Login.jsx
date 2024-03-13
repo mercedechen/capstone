@@ -9,7 +9,6 @@ import { setCart } from '../redux/cart';
 
 function Login(props) {
   
-  console.log(props);
   const [ login ] = useLoginMutation(props.userInfo);
   const navigate = useNavigate();
   const [ errorMsg, setErrorMsg ] = useState(null);

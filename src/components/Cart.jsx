@@ -1,3 +1,7 @@
+// React
+import { useNavigate } from "react-router-dom";
+
+// Redux
 import { useSelector, useDispatch } from "react-redux";
 import { removeProduct, getCart } from "../redux/cart";
 
@@ -11,13 +15,15 @@ function Cart(props) {
 
   const dispatch = useDispatch();
 
+  const navigate = useNavigate();
+
   // localStorage resides in Cart component where the products are stored in the cart
   // localStorage.setItem("key", "value") where key (name of the argument) and value (data of the argument) are strings. If object or array, must use JSON.stringify().
   // Sets cart to the state it was at.
   localStorage.setItem("cart", JSON.stringify(cart))
 
-  const subtotal = () => {
-
+  const handleClick = (event) => {
+    navigate('checkout');
   }
 
   return (
@@ -51,7 +57,7 @@ function Cart(props) {
       <div className="summary">
         <div className="details">
           <h3>Subtotal:</h3>
-          <p>${subtotal}</p>
+          {/* <p>${subtotal}</p> */}
         </div>
 
         <div className="details">
@@ -59,9 +65,8 @@ function Cart(props) {
           <p>$</p>
         </div>
         
-        <a href='/checkout'>
-          <button>Check Out</button>
-        </a>
+        <button onClick={handleClick}>Check Out</button>
+
       </div>
     </div>
   )
