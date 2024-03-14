@@ -19,32 +19,37 @@ function Account(props) {
   }
 
   return (
-    <div className="account">
-      <h2>Welcome Back</h2>
-      <div>
-        {
-          data?.map((user) => {
-            return user.username === props.userInfo.username?
-            (
-              <div key={user.id}>
-                <h3>First Name:</h3>
-                <p>{user.name.firstname}</p>
-                <h3>Last Name:</h3>
-                <p>{user.name.lastname}</p>
-                <h3>Username:</h3>
-                <p>{user.username}</p>
-                <h3>Password:</h3>
-                <p>{user.password}</p>
-                <h3>Email:</h3>
-                <p>{user.email}</p>
-              </div>
-            ) : (
-              <span key={user.id}/>
-            )
-          })
-        }
+    <div className="container">
+      <div className="account">
+        <h2>Welcome Back</h2>
+        <div>
+          {
+            data?.map((user) => {
+              return user.username === props.userInfo.username?
+              (
+                <div key={user.id}>
+                  <h3>First Name:</h3>
+                  <p>{user.name.firstname}</p>
+                  <h3>Last Name:</h3>
+                  <p>{user.name.lastname}</p>
+                  <h3>Username:</h3>
+                  <p>{user.username}</p>
+                  <h3>Password:</h3>
+                  <p>{user.password}</p>
+                  <h3>Email:</h3>
+                  <p>{user.email}</p>
+                </div>
+              ) : (
+                <span key={user.id}/>
+              )
+            })
+          }
+        </div>
+        <button>Edit</button>
       </div>
-      <button>Edit</button>
+      <div className="orders">
+        <h2>Order History</h2>
+      </div>
     </div>
   )
 }
