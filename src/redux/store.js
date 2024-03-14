@@ -6,7 +6,7 @@ export default configureStore({
   reducer: {
     // api object --> key:value
     [apiSlice.reducerPath]: apiSlice.reducer,
-    
+
     cartState: cart
   },
   

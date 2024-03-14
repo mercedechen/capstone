@@ -1,7 +1,7 @@
 // react
 import { NavLink, useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { getCart } from "../redux/cart";
+import { useSelector, useDispatch } from "react-redux";
+import { getCart, resetCart } from "../redux/cart";
 
 // assets
 import logo from '../assets/logo.svg';
@@ -10,11 +10,14 @@ function Navigation(props){
 
   const cart = useSelector(getCart);
 
+  const dispatch = useDispatch();
+
   const navigate = useNavigate();
 
   const logoutUser = () => {
     props.setToken(null);
     localStorage.setItem("cart", JSON.stringify(cart));
+    dispatch(resetCart());
     navigate("/");
   }
 
