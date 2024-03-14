@@ -2,16 +2,6 @@ import { useState } from "react";
 
 function Checkout () {
 
-  const dummyBill = {
-    name: {
-      firstname: "Chum",
-      lastname: "Lee"
-    },
-    cardnumber: 1234567890,
-  }
-
-  // console.log('dummydata', dummyBill);
-
   const [ billingInfo, setBillingInfo ] = useState({
     name: {
       firstname: "",
@@ -28,11 +18,19 @@ function Checkout () {
       zipcode: "",
     },
   });
-  // console.log('billInfo', billingInfo);
-  // console.log('shippingInfo', shippingInfo);
+
+  const [ error, setError ] = useState(null);
+  const [ success, setSuccess ] = useState(null);
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    if (!billingInfo || !shippingInfo) {
+      setError("Missing payment information. Please review the information above and try again. If problems persist, please contact us at customerservice@shop.com")
+      return
+    } else {
+      setSuccess("Thank you for your order! An email has been sent with your order details. For any questions, please contact us at contact@shop.com.")
+    }
   }
 
   const onUserInput = (e) => {
@@ -95,6 +93,7 @@ function Checkout () {
   return (
       <div>
         <h2>Checkout</h2>
+
         <form onSubmit={handleSubmit} className="checkout">
           <label>First Name
             <input 
@@ -169,6 +168,11 @@ function Checkout () {
           </label>
           <button>Order</button>
         </form>
+
+        <div className="response">
+          {error ? <p>{error}</p> : <span/>}
+          {success ? <p>{success}</p> : <span/>}
+        </div>
       </div>
   )
 }

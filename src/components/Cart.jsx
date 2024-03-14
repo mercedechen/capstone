@@ -7,15 +7,15 @@ import { removeProduct, getCart } from "../redux/cart";
 
 function Cart(props) {
 
-  if (!props.token) {
-    return <h3>You must be logged in to perform this action.</h3>
-  }
-
   const cart = useSelector(getCart);
 
   const dispatch = useDispatch();
 
   const navigate = useNavigate();
+
+  if (!props.token) {
+    return <h3>You must be logged in to perform this action.</h3>
+  }
 
   // localStorage resides in Cart component where the products are stored in the cart
   // localStorage.setItem("key", "value") where key (name of the argument) and value (data of the argument) are strings. If object or array, must use JSON.stringify().

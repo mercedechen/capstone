@@ -18,6 +18,8 @@ function Products() {
   // Functionality comes from Categories component.
   const [ filteredProducts, setFilteredProducts ] = useState([]);
 
+  const [ sortProducts, setSortProducts ] = useState([]);
+
   if (isLoading) {
     return <p>Loading Products...</p>
   }
@@ -35,7 +37,7 @@ function Products() {
           <Search data={data} setSearchedProducts={setSearchedProducts}/>
         </div>
 
-        <Sort/>
+        <Sort data={data} setSortProducts={setSortProducts}/>
       </div>
 
       <div className="products">
