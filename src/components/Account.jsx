@@ -1,6 +1,3 @@
-// React
-import { useState } from 'react';
-
 // Redux
 import { useAccountQuery } from "../redux/api";
 
@@ -24,42 +21,29 @@ function Account(props) {
   return (
     <div className="account">
       <h2>Welcome Back</h2>
-      {
-        data?.map((user) => {
-          return user.username === props.userInfo.username?
-          (
-            <div key={user.id}>
-              <div className="userDetail">
+      <div>
+        {
+          data?.map((user) => {
+            return user.username === props.userInfo.username?
+            (
+              <div key={user.id} className="userDetail">
                 <h3>First Name:</h3>
                 <p>{user.name.firstname}</p>
-              </div>
-
-              <div className="userDetail">
                 <h3>Last Name:</h3>
                 <p>{user.name.lastname}</p>
-              </div>
-
-              <div className="userDetail">
                 <h3>Username:</h3>
                 <p>{user.username}</p>
-              </div>
-
-              <div className="userDetail">
                 <h3>Password:</h3>
                 <p>{user.password}</p>
-              </div>
-
-              <div className="userDetail">
                 <h3>Email:</h3>
                 <p>{user.email}</p>
               </div>
-            </div>
-          ) : ( 
-            <span/>
-          )
-        })
-      }
-
+            ) : (
+              <span key={user.id}/>
+            )
+          })
+        }
+      </div>
       <button>Edit</button>
     </div>
   )

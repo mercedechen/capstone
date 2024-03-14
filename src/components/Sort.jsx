@@ -1,7 +1,5 @@
 function Sort({ data, setSortProducts }) {
 
-  console.log('Data', data);
-
   const sort = (e) => {    
     // Sort products in alphabetical order (A-Z)
     if(e.target.value === "1"){

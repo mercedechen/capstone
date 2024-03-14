@@ -57,12 +57,10 @@ function Cart(props) {
       <div className="summary">
         <div className="details">
           <h3>Subtotal:</h3>
-          {/* <p>${subtotal}</p> */}
         </div>
 
         <div className="details">
           <h3>Total:</h3>
-          <p>$</p>
         </div>
         
         <button onClick={handleClick}>Check Out</button>
