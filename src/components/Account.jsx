@@ -26,7 +26,7 @@ function Account(props) {
           data?.map((user) => {
             return user.username === props.userInfo.username?
             (
-              <div key={user.id} className="userDetail">
+              <div key={user.id}>
                 <h3>First Name:</h3>
                 <p>{user.name.firstname}</p>
                 <h3>Last Name:</h3>

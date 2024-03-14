@@ -255,10 +255,15 @@ form {
   margin: 0 auto 20px auto;
 }
 
-.userDetail p {
+.account h3 {
+  font-size: 14px;
+}
+
+.account p {
   border: 1px solid #D9D9D9;
   margin: 10px 0 15px 0;
   padding: 5px 0 5px 25px;
+  font-size: 14px;
 }
 
 
