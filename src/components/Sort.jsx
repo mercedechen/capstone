@@ -2,22 +2,32 @@ function Sort({ data, setSortProducts }) {
 
   console.log('Data', data);
 
-  const sort = (e) => {
-    console.log('Option', e.target.value)
-    
+  const sort = (e) => {    
     // Sort products in alphabetical order (A-Z)
     if(e.target.value === "1"){
       const sorted = [...data]?.sort((a,b) => a.title.localeCompare(b.title))
-      console.log('sorted', sorted)
       setSortProducts(sorted);
+
     // Sort products in reverse alphabetical order (Z-A)
-    } else if (e.target.value === "2"){
+    } else if(e.target.value === "2"){
       const sorted = [...data]?.sort((a,b) => a.title.localeCompare(b.title)).reverse()
-      console.log('sorted', sorted)
+      setSortProducts(sorted);
+
+    // Sort products by increasing price
+    } else if(e.target.value === "3"){
+      const sorted = [...data]?.sort((a,b) => {
+        return (a.price - b.price)
+      })
+      setSortProducts(sorted);
+      
+      // Sort products by decreasing price
+    } else if(e.target.value === "4"){
+      const sorted = [...data]?.sort((a,b) => {
+        return (b.price - a.price)
+      })
       setSortProducts(sorted);
     }
   }
-
 
   return (
     <div className="sort-box">
