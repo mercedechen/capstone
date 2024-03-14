@@ -173,7 +173,7 @@ form {
 
 .details {
   display: flex;
-  margin: 20px 20px 0 0;
+  margin-top: 20px;
 }
 
 .details h3, .details p {
@@ -300,4 +300,13 @@ form {
 
 .itemInCart img {
   width: 200px;
+}
+
+.cartItems input {
+  width: 75px;
+}
+
+.cartItems .details button{
+  margin: 0 0 0 10px;
+  width: 40px;
 }
