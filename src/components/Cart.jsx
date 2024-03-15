@@ -18,22 +18,23 @@ function Cart(props) {
   const [ cartSubtotal, setCartSubtotal ] = useState(0);
   const [ cartTotal, setCartTotal ] = useState(0)
 
-  // Only when there's a change to 'cart', useEffect() will be invoked.
+  // Only when there's a change to 'cart', useEffect() will be invoked. Maps over each item in the cart array and calculates subtotal.
+  // Subtotal = item price * item quantity and adds to cartSubtotal. setCartSubtotal() updates cartSubtotal.
   useEffect(() => {
-    cart.map((item) => {
-      const newSubtotal = (cartSubtotal + (item.price * item.quantity)).toFixed(2);
-      setCartSubtotal(newSubtotal);
-    })
+    // cart.reduce((accumulator, currentValue))
+    const subtotal = cart.reduce((total, product) => {
+      return (total + (product.price * product.quantity));
+    }, 0);
+    const newSubtotal = subtotal.toFixed(2);
+    setCartSubtotal(newSubtotal);
   }, [cart])
 
-  console.log('subtotal', cartSubtotal);
-
+  // Total = cartSubtotal * NYC tax rate 8.875%
+  // setCartTotal() updates cartTotal
   useEffect(() => {
     const cartTotal = (cartSubtotal * 1.08875).toFixed(2);
     setCartTotal(cartTotal);
   })
-
-  console.log('cart total', cartTotal);
 
   // localStorage resides in Cart component where the products are stored in the cart
   // localStorage.setItem("key", "value") where key (name of the argument) and value (data of the argument) are strings. If object or array, must use JSON.stringify().
@@ -72,11 +73,11 @@ function Cart(props) {
                     <input value={product.quantity}></input>
                     {/* use dispatch similar to the dispatch remove */}
                     <button>-</button>
-                    <button onClick={()=>{dispatch(addToProduct(product.id))}}>+</button>
+                    <button>+</button>
                   </div>
                   
                   <button onClick={()=>{dispatch(removeProduct(product.id))}}>
-                    Dispatch Remove
+                    Remove
                   </button>
                 </div>
               </div>
