@@ -85,16 +85,11 @@ function Cart(props) {
       </div>
 
       <div className="summary">
-        <div className="details">
-          <h3>Subtotal: ${cartSubtotal}</h3>
-        </div>
-
-        <div className="details">
-          <h3>Total: ${cartTotal}</h3>
-        </div>
-        
+        <h3>Subtotal:</h3>
+        <p>${cartSubtotal}</p>
+        <h3>Total:</h3>
+        <p>${cartTotal}</p>
         <button onClick={handleClick}>Check Out</button>
-
       </div>
     </div>
   )
