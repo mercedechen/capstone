@@ -21,7 +21,7 @@ function Cart(props) {
   // Only when there's a change to 'cart', useEffect() will be invoked. Maps over each item in the cart array and calculates subtotal.
   // Subtotal = item price * item quantity and adds to cartSubtotal. setCartSubtotal() updates cartSubtotal.
   useEffect(() => {
-    // cart.reduce((accumulator, currentValue))
+    // cart.reduce((accumulator, currentValue) => accumulator + currentValue, initialValue)
     const subtotal = cart.reduce((total, product) => {
       return (total + (product.price * product.quantity));
     }, 0);
@@ -43,9 +43,7 @@ function Cart(props) {
 
   const handleClick = () => {
     navigate('checkout');
-  }
-
-  console.log('cart', cart)
+  };
 
   return (
     <div>
