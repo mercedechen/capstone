@@ -16,6 +16,7 @@ function Cart(props) {
   const dispatch = useDispatch();
   const cart = useSelector(getCart);
   const [ cartSubtotal, setCartSubtotal ] = useState(0);
+  const [ cartTotal, setCartTotal ] = useState(0)
 
   // Only when there's a change to 'cart', useEffect() will be invoked.
   useEffect(() => {
@@ -26,6 +27,13 @@ function Cart(props) {
   }, [cart])
 
   console.log('subtotal', cartSubtotal);
+
+  useEffect(() => {
+    const cartTotal = (cartSubtotal * 1.08875).toFixed(2);
+    setCartTotal(cartTotal);
+  })
+
+  console.log('cart total', cartTotal);
 
   // localStorage resides in Cart component where the products are stored in the cart
   // localStorage.setItem("key", "value") where key (name of the argument) and value (data of the argument) are strings. If object or array, must use JSON.stringify().
@@ -83,7 +91,7 @@ function Cart(props) {
         </div>
 
         <div className="details">
-          <h3>Total: $</h3>
+          <h3>Total: ${cartTotal}</h3>
         </div>
         
         <button onClick={handleClick}>Check Out</button>
