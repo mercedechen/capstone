@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 
 // Redux
 import { useSelector, useDispatch } from "react-redux";
-import { removeProduct, getCart } from "../redux/cart";
+import { increase, decrease, removeProduct, getCart, addProduct } from "../redux/cart";
 
 function Cart(props) {
 
@@ -68,10 +68,20 @@ function Cart(props) {
 
                   <div className="details">
                     <h3>Quantity:</h3>
-                    <input value={product.quantity}></input>
-                    {/* use dispatch similar to the dispatch remove */}
-                    <button>-</button>
-                    <button>+</button>
+
+                    <p className="quantity">{product.quantity}</p>
+
+                    <button 
+                      onClick={() => {
+                        if(product.quantity === 1) {
+                          dispatch(removeProduct(product.id))
+                          return
+                        }
+                        dispatch(decrease(product.id))}
+                      }> - 
+                    </button>
+                    
+                    <button onClick={() => {dispatch(increase(product.id))}}> + </button>
                   </div>
                   
                   <button onClick={()=>{dispatch(removeProduct(product.id))}}>
