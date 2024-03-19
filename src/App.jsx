@@ -1,8 +1,8 @@
-// React
+// react
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { useState } from 'react';
 
-// Components
+// components
 import './App.css';
 import Navigation from './components/Navigation.jsx';
 import Register from './components/Register.jsx';
@@ -12,14 +12,16 @@ import Products from './components/Products.jsx';
 import Product from './components/Product.jsx';
 import FilterByM from './components/FilterByM.jsx';
 import FilterByF from './components/FilterByF.jsx';
+import FilterByJewelery from './components/FilterByJewelery.jsx';
+import FilterByElectronics from './components/FilterByElectronics.jsx';
 import Cart from './components/Cart.jsx';
 import Checkout from './components/Checkout.jsx';
 
-
 function App() {
   
-  // The following can be passed down to specific components.
+  // These can be passed down to specific components.
   const [ token, setToken ] = useState(null);
+
   // Username will be passed down to Login and Account components.
   const [ userInfo, setUserInfo ] = useState({
     username: "",
@@ -69,6 +71,7 @@ function App() {
             />}
           />
 
+        {/* Filters */}
           <Route
             path="/mensclothing"
             element={<FilterByM/>}
@@ -78,6 +81,17 @@ function App() {
             path="/womensclothing"
             element={<FilterByF/>}
           />
+
+          <Route
+            path="/jewelery"
+            element={<FilterByJewelery/>}
+          />
+
+          <Route
+            path="/electronics"
+            element={<FilterByElectronics/>}
+          />
+        {/* End of Filters */}
 
           <Route
             path="/cart"
