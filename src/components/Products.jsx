@@ -21,7 +21,7 @@ function Products() {
   // Functionality comes from <Sort/>
   const [ sortProducts, setSortProducts ] = useState([]);
 
-  // If fetch request made to retrieve list of products from database, display "Loading Products" text
+  // Boolean - if waiting for fetch request to retrieve list of products from database, display "Loading Products" text
   if (isLoading) {
     return <p>Loading Products...</p>
   }

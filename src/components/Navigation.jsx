@@ -8,6 +8,9 @@ import { getCart, resetCart } from "../redux/cart";
 // assets
 import logo from '../assets/logo.svg';
 
+// components
+import Filter from "./Filter";
+
 function Navigation(props){
 
   const cart = useSelector(getCart);
@@ -45,21 +48,25 @@ function Navigation(props){
   }
 
   return (
-    <nav>
-      <div className="logo-box">
-        <NavLink to="/" className="logo">
-          <img src={logo}/>
-        </NavLink>
-      </div>
+    <div>
+      <nav>
+        <div className="logo-box">
+          <NavLink to="/" className="logo">
+            <img src={logo}/>
+          </NavLink>
+        </div>
+          <NavLink to="/register">
+            Register
+          </NavLink>
+          <NavLink to="/login">
+            Login
+          </NavLink>
+      </nav>
+
       <div>
-        <NavLink to="/register">
-          Register
-        </NavLink>
-        <NavLink to="/login">
-          Login
-        </NavLink>
+        {/* <a href="/mensclothing">Men</a> */}
       </div>
-    </nav>
+    </div>
   )
 }
 

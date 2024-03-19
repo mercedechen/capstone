@@ -10,6 +10,7 @@ import Login from './components/Login.jsx';
 import Account from './components/Account.jsx';
 import Products from './components/Products.jsx';
 import Product from './components/Product.jsx';
+import FilterByM from './components/FilterByM.jsx';
 import Cart from './components/Cart.jsx';
 import Checkout from './components/Checkout.jsx';
 
@@ -57,7 +58,7 @@ function App() {
 
           <Route 
             path="/" 
-            element={<Products />}
+            element={<Products/>}
           />
 
           <Route 
@@ -65,6 +66,11 @@ function App() {
             element={<Product 
               token={token}
             />}
+          />
+
+          <Route
+            path="/mensclothing"
+            element={<FilterByM/>}
           />
 
           <Route
