@@ -58,7 +58,21 @@ nav a {
   margin: 0;
 }
 
-/* Filter (includes Search and Sort) */
+/* Filters (includes Search and Sort) */
+.filters {
+  display: flex;
+  align-items: center;
+  background-color: #D9D9D9;
+  border-radius: 5px;
+  margin-top: 20px;
+  font-size: 11pt;
+  font-weight: 500;
+}
+
+.filters a {
+  padding: 10px 25px;
+}
+
 .options {
   display: flex;
   align-items: center;
@@ -70,10 +84,10 @@ nav a {
   margin-top: 20px;
 }
 
-.filter button {
+/* .filter button {
   font-weight: 500;
   margin: 0 25px;
-}
+} */
 
 .searchBar, .searchBar input {
   border-radius: 25px;

@@ -46,12 +46,6 @@ function Filter({ data, setFilteredProducts }) {
 
   return (
     <div>
-      <div className="filter">
-        <button onClick={removeFilter}>All</button>        <button onClick={filterByMen}>Men</button>
-        <button onClick={filterByWomen}>Women</button>
-        <button onClick={filterByJewelery}>Jewelery</button>
-        <button onClick={filterByElectronics}>Electronics</button>
-      </div>
     </div>
   )
 }

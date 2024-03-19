@@ -15,9 +15,6 @@ function Products() {
   // Functionality comes from <Search/>
   const [ searchedProducts, setSearchedProducts ] = useState([]);
 
-  // Functionality comes from <Filter/>
-  const [ filteredProducts, setFilteredProducts ] = useState([]);
-
   // Functionality comes from <Sort/>
   const [ sortProducts, setSortProducts ] = useState([]);
 
@@ -35,7 +32,7 @@ function Products() {
     <div>
       <div>
         <div className="options">
-          <Filter data={data} setFilteredProducts={setFilteredProducts}/>
+          {/* <Filter data={data} setFilteredProducts={setFilteredProducts}/> */}
           <Search data={data} setSearchedProducts={setSearchedProducts}/>
         </div>
         <Sort data={data} setSortProducts={setSortProducts}/>
@@ -55,18 +52,6 @@ function Products() {
               </div>
             )
           }) 
-          :
-          filteredProducts.length?
-          filteredProducts.map((product) => {
-            return (
-              <div className="product" key={product.id}>
-                <Link to={`/${product.id}`}>
-                  <img src={product.image} alt={product.title}/>
-                  <h2>{product.title}</h2>
-                </Link>
-              </div>
-            )
-          })
           :
           sortProducts.length?
           sortProducts.map((product) => {

@@ -1,8 +1,8 @@
-// React
-import { useState } from 'react';
+// react
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-// Redux
+// redux
 import { useLoginMutation } from '../redux/api';
 import { useDispatch } from 'react-redux';
 import { setCart } from '../redux/cart';
@@ -11,9 +11,8 @@ function Login(props) {
   
   const [ login ] = useLoginMutation(props.userInfo);
   const navigate = useNavigate();
-  const [ errorMsg, setErrorMsg ] = useState(null);
-
   const dispatch = useDispatch();
+  const [ errorMsg, setErrorMsg ] = useState(null);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -25,6 +24,7 @@ function Login(props) {
     } else {
       props.setToken(data.token);
 
+      // Retrieves logged in user's cart from localStorage
       const existingCart = JSON.parse(localStorage.getItem("cart"));
 
       if (existingCart) {
