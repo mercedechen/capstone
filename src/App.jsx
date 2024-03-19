@@ -11,6 +11,7 @@ import Account from './components/Account.jsx';
 import Products from './components/Products.jsx';
 import Product from './components/Product.jsx';
 import FilterByM from './components/FilterByM.jsx';
+import FilterByF from './components/FilterByF.jsx';
 import Cart from './components/Cart.jsx';
 import Checkout from './components/Checkout.jsx';
 
@@ -71,6 +72,11 @@ function App() {
           <Route
             path="/mensclothing"
             element={<FilterByM/>}
+          />
+
+          <Route
+            path="/womensclothing"
+            element={<FilterByF/>}
           />
 
           <Route

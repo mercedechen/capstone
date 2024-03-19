@@ -10,6 +10,7 @@ import logo from '../assets/logo.svg';
 
 // components
 import Filter from "./Filter";
+import Search from "./Search";
 
 function Navigation(props){
 
@@ -65,6 +66,7 @@ function Navigation(props){
 
       <div>
         {/* <a href="/mensclothing">Men</a> */}
+        {/* <a href="/womensclothing">Women</a> */}
       </div>
     </div>
   )
