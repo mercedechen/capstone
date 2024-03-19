@@ -5,25 +5,28 @@ import { Link } from 'react-router-dom';
 
 // components
 import Search from './Search';
-import Categories from './Categories';
+import Filter from './Filter';
 import Sort from './Sort';
 
 function Products() {
 
   const { data, error, isLoading } = useProductsQuery();
 
-  // Functionality comes from Search component.
+  // Functionality comes from <Search/>
   const [ searchedProducts, setSearchedProducts ] = useState([]);
 
-  // Functionality comes from Categories component.
+  // Functionality comes from <Filter/>
   const [ filteredProducts, setFilteredProducts ] = useState([]);
 
+  // Functionality comes from <Sort/>
   const [ sortProducts, setSortProducts ] = useState([]);
 
+  // If fetch request made to retrieve list of products from database, display "Loading Products" text
   if (isLoading) {
     return <p>Loading Products...</p>
   }
 
+  // If there is an issue making a fetch request for list of products, display error message to the user
   if (error) {
     return <p>Oops! An unexpected error has occurred. Please try again later.</p>
   }
@@ -32,20 +35,17 @@ function Products() {
     <div>
       <div>
         <div className="options">
-          <Categories data={data} setFilteredProducts={setFilteredProducts}/>
-
+          <Filter data={data} setFilteredProducts={setFilteredProducts}/>
           <Search data={data} setSearchedProducts={setSearchedProducts}/>
-
         </div>
-
         <Sort data={data} setSortProducts={setSortProducts}/>
       </div>
 
       <div className="products">
         {
           data.length?
-          sortProducts.length?
-          sortProducts.map((product) => {
+          searchedProducts.length ?
+          searchedProducts.map((product) => {
             return (
               <div className="product" key={product.id}>
                 <Link to={`/${product.id}`}>
@@ -66,10 +66,10 @@ function Products() {
                 </Link>
               </div>
             )
-          }) 
+          })
           :
-          searchedProducts.length ?
-          searchedProducts.map((product) => {
+          sortProducts.length?
+          sortProducts.map((product) => {
             return (
               <div className="product" key={product.id}>
                 <Link to={`/${product.id}`}>
@@ -78,7 +78,7 @@ function Products() {
                 </Link>
               </div>
             )
-          }) 
+          })
           :
           data?.map((product) => {
             return (

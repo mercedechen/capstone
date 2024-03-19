@@ -1,4 +1,4 @@
-function Categories({ data, setFilteredProducts }) {
+function Filter({ data, setFilteredProducts }) {
   // Removes category filter by setting setFilterProducts in Products component back to an empty array and displays all products from database.
   const removeFilter = () => {
     setFilteredProducts([]);
@@ -55,4 +55,4 @@ function Categories({ data, setFilteredProducts }) {
   )
 }
 
-export default Categories;
+export default Filter;
