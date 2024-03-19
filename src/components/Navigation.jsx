@@ -1,5 +1,7 @@
 // react
 import { NavLink, useNavigate } from "react-router-dom";
+
+// redux
 import { useSelector, useDispatch } from "react-redux";
 import { getCart, resetCart } from "../redux/cart";
 
