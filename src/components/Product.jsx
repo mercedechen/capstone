@@ -34,6 +34,48 @@ function Product(props) {
     };
   };
 
+  if(props.token){
+
+    return (
+      <div className="productView">
+        <img src ={data.image}/> 
+        
+        <div className="productDetails">
+          <h2>{data.title}</h2>
+  
+          <div className="subDetails">
+            <h3>Category: {data.category}</h3>
+            <h3>Rating: {data.rating.rate} ({data.rating.count} Reviews)</h3>
+          </div>
+  
+          <div className="details">
+            <h3>Description:</h3>
+            <p>{data.description}</p>
+          </div>
+  
+          <div className="details">
+            <h3>Price:</h3>
+            <p>${data.price.toFixed(2)}</p>
+          </div>
+  
+          <button onClick={() => handleClick()}>
+            Add to Cart
+          </button>
+  
+          <div className='response'>
+            {/* If user is not logged in, error msg is set to errorMsg and renders, else empty span element */}
+            {errorMsg ? <p>{errorMsg}</p> : <span />}
+            
+            {/* If user is logged in and adds item to cart, success message is rendered */}
+            {success ? <p>{success}</p> : <span />}
+          </div>
+  
+          <Link to="/" className="return">Go Back</Link>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <div className="productView">
       <img src ={data.image}/> 
@@ -55,10 +97,6 @@ function Product(props) {
           <h3>Price:</h3>
           <p>${data.price.toFixed(2)}</p>
         </div>
-
-        <button onClick={() => handleClick()}>
-          Add to Cart
-        </button>
 
         <div className='response'>
           {/* If user is not logged in, error msg is set to errorMsg and renders, else empty span element */}
