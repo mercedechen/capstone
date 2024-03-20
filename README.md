@@ -6,13 +6,20 @@ This is an ecommerce application that allows users to browse and shop available 
 
 Built with React, Redux, JavaScript, HTML5, CSS
 
+## Getting Started
+1. Fork and clone this repository
+2. `npm install` `react` `react-redux` `react-router-dom` `@reduxjs/toolkit`
+3. `npm run dev` to start the build process and run the application using Vite
+4. Copy and paste the localhost url to your preferred web browser
+5. Start shopping to your heart's content!
+
 ## Description
 
 As a user (not logged in):
 * view entire list of available products
 * view product details
 * create a new account
-* access login
+* access login page
 
 As a user (logged in):
 * same access as a user not logged in
