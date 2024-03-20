@@ -62,10 +62,7 @@ function Product(props) {
             Add to Cart
           </button>
   
-          <div className='response'>
-            {/* If user is not logged in, error msg is set to errorMsg and renders, else empty span element */}
-            {errorMsg ? <p>{errorMsg}</p> : <span />}
-            
+          <div className='response'>            
             {/* If user is logged in and adds item to cart, success message is rendered */}
             {success ? <p>{success}</p> : <span />}
           </div>
@@ -96,14 +93,6 @@ function Product(props) {
         <div className="details">
           <h3>Price:</h3>
           <p>${data.price.toFixed(2)}</p>
-        </div>
-
-        <div className='response'>
-          {/* If user is not logged in, error msg is set to errorMsg and renders, else empty span element */}
-          {errorMsg ? <p>{errorMsg}</p> : <span />}
-          
-          {/* If user is logged in and adds item to cart, success message is rendered */}
-          {success ? <p>{success}</p> : <span />}
         </div>
 
         <Link to="/" className="return">Go Back</Link>

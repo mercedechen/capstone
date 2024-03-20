@@ -193,7 +193,7 @@ select {
 
 .details {
   display: flex;
-  margin-top: 20px;
+  margin: 20px 0;
 }
 
 .details h3, .details p, .summary h3 {
