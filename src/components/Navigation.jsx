@@ -8,6 +8,9 @@ import { getCart, resetCart } from "../redux/cart";
 // assets
 import logo from '../assets/logo.svg';
 
+// components
+import Search from "./Search";
+
 function Navigation(props){
 
   const dispatch = useDispatch();
@@ -49,6 +52,7 @@ function Navigation(props){
           <Link to="/jewelery">Jewelery</Link>
           <Link to="/electronics">Electronics</Link>
         </div>
+
       </div>
     )
   }

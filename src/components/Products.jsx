@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 
 // components
 import Search from './Search';
-import Filter from './Filter';
 import Sort from './Sort';
 
 function Products() {
@@ -31,9 +30,9 @@ function Products() {
   return (
     <div>
       <div>
-        <div className="options">
+        <div>
           {/* <Filter data={data} setFilteredProducts={setFilteredProducts}/> */}
-          <Search data={data} setSearchedProducts={setSearchedProducts}/>
+          {/* <Search data={data} setSearchedProducts={setSearchedProducts}/> */}
         </div>
         <Sort data={data} setSortProducts={setSortProducts}/>
       </div>

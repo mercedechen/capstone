@@ -50,8 +50,6 @@ function Login(props) {
     <div className="login">
       <h2>Returning User</h2>
 
-      { errorMsg ? <p>Error: {errorMsg}</p> : <span /> }
-
       <form onSubmit={handleSubmit}>
         <label>Username
           <input 
@@ -60,7 +58,7 @@ function Login(props) {
             placeholder="Username"
             value={props.userInfo.username}
             onChange={onUserInput}
-          />
+            />
         </label>
         <label>Password
           <input 
@@ -69,10 +67,11 @@ function Login(props) {
             placeholder="Password"
             value={props.userInfo.password}
             onChange={onUserInput}
-          />
+            />
         </label>
-        
         <button>Login</button>
+        
+        { errorMsg ? <p>Error: {errorMsg}</p> : <span /> }
       </form>
     </div>
   )
