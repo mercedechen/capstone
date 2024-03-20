@@ -91,10 +91,10 @@ function Checkout () {
   };
 
   return (
-      <div>
+      <div className="checkout">
         <h2>Checkout</h2>
 
-        <form onSubmit={handleSubmit} className="checkout">
+        <form onSubmit={handleSubmit}>
           <label>First Name
             <input 
               type="text"

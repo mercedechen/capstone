@@ -14,17 +14,21 @@
 
 a, button {
   cursor: pointer;
-  color: #353535;
 }
 
 a {
   text-decoration: inherit;
+  color: #353535;
 }
 
 button {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   background-color: transparent;
   border: none;
+  padding: 10px;
+  width: 100%;
+  background-color: #284B63;
+  color: #ffffff;
 }
 
 h2, h3, h4, p {
@@ -73,53 +77,37 @@ nav a {
   padding: 10px 25px;
 }
 
-.options {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #D9D9D9;
-  border-radius: 5px;
-  font-size: 10pt;
-  height: 30px;
-  margin-top: 20px;
-}
-
-/* .filter button {
-  font-weight: 500;
-  margin: 0 25px;
+/* .searchBar, .searchBar input {
+  border-radius: 25px;
 } */
 
-.searchBar, .searchBar input {
-  border-radius: 25px;
-}
-
-.searchBar {
+/* .searchBar {
   margin-right: 23px;
   width: 125px;
   background-color: #FFFFFF;
   opacity: 80%;
-}
+} */
 
-.searchBar input {
+/* .searchBar input {
   font-family: inherit;
   border: none;
   padding-left: 15px;
   color: #353535;
   height: 20px;
-}
+} */
 
-.searchBar input::placeholder {
+/* .searchBar input::placeholder {
   color: #D9D9D9;
   font-weight: 500;
-}
+} */
 
 .sort-box {
   display: flex;
   justify-content: flex-end;
-  margin-top: 14px;
+  margin-top: 2px;
 }
 
-h4, .sort {
+h4, select {
   text-transform: uppercase;
   font-size: 8pt;
 }
@@ -129,16 +117,12 @@ h4 {
   font-weight: 400;
 }
 
-.sort {
+select {
+  font-style: inherit;
+  width: 50px;
   border-style: none;
   font-weight: 600;
   color: #3C6E71;
-  width: 138px;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
 }
 
 /* Products */
@@ -165,7 +149,7 @@ form {
   font-weight: 600;
 }
 
-/* Product (Single) */
+/* Product Details */
 .productView {
   display: flex;
   margin: 100px 200px;
@@ -190,21 +174,6 @@ form {
 
 .productDetails button, .registration button, .login button, .summary button, .account button, .checkout button {
   font-size: 14px;
-  padding: 10px;
-  width: 100%;
-  background-color: #284B63;
-  color: #ffffff;
-}
-
-.details {
-  display: flex;
-  margin-top: 20px;
-}
-
-.details h3, .details p, .summary h3 {
-  font-weight: 400;
-  font-size: 11pt;
-  margin-right: 20px;
 }
 
 .subDetails {
@@ -222,6 +191,17 @@ form {
   font-size: 8pt;
 }
 
+.details {
+  display: flex;
+  margin-top: 20px;
+}
+
+.details h3, .details p, .summary h3 {
+  font-weight: 400;
+  font-size: 11pt;
+  margin-right: 20px;
+}
+
 .return {
   font-weight: 400;
   font-size: 8pt;
@@ -233,10 +213,10 @@ form {
 .registration, .login, .checkout {
   text-align: left;
   width: 372px;
-  margin: auto;
+  margin: 50px auto;
 }
 
-.registration h2, .login h2 {
+.registration h2, .login h2, .checkout h2 {
   font-size: 18px;
 }
 
@@ -280,7 +260,7 @@ form {
   flex-direction: column;
   border: 1px solid #D9D9D9;
   padding: 25px;
-  margin: 0 auto;
+  margin: 50px auto;
 }
 
 .account {
@@ -307,28 +287,23 @@ form {
   font-size: 12px;
 }
 
-
 /* Cart */
 .cartItems {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: left;
+  margin: 50px;
 }
 
 .itemInCart {
   display: flex;
   flex-direction: row;
-  margin: 10px;
   padding: 20px;
 }
 
 .itemInCart img {
   width: 200px;
-}
-
-.cartItems input {
-  width: 75px;
 }
 
 .cartItems .details button{
