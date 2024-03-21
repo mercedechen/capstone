@@ -33,7 +33,7 @@ function Sort({ data, setSortProducts }) {
   }
 
   return (
-    <div className="sort-box">
+    <div className="sort">
       <h4>Sort By</h4>
         <select onChange={sort}>
           <option value="0"></option>

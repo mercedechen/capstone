@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom';
 
 // components
-// import Search from './Search';
+import Search from './Search';
 import Sort from './Sort';
 
 function Products() {
@@ -29,28 +29,26 @@ function Products() {
   
   return (
     <div>
-      <div>
-        <div>
-          {/* <Search data={data} setSearchedProducts={setSearchedProducts}/> */}
-        </div>
+      <div className="sub-filters">
+        <Search data={data} setSearchedProducts={setSearchedProducts}/>
         <Sort data={data} setSortProducts={setSortProducts}/>
       </div>
 
       <div className="products">
         {
           data.length?
-          // searchedProducts.length ?
-          // searchedProducts.map((product) => {
-          //   return (
-          //     <div className="product" key={product.id}>
-          //       <Link to={`/${product.id}`}>
-          //         <img src={product.image} alt={product.title}/>
-          //         <h2>{product.title}</h2>
-          //       </Link>
-          //     </div>
-          //   )
-          // }) 
-          // :
+          searchedProducts.length ?
+          searchedProducts.map((product) => {
+            return (
+              <div className="product" key={product.id}>
+                <Link to={`/${product.id}`}>
+                  <img src={product.image} alt={product.title}/>
+                  <h2>{product.title}</h2>
+                </Link>
+              </div>
+            )
+          }) 
+          :
           sortProducts.length?
           sortProducts.map((product) => {
             return (
