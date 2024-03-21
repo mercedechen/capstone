@@ -20,7 +20,7 @@ function FilterByF(){
 
   return (
     <div>
-      <div>
+      <div className="sub-filters">
         <Sort data={data} setSortProducts={setSortProducts}/>
       </div>
       <div className="products">
