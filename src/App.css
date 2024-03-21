@@ -309,11 +309,19 @@ select {
 
 .itemInCart img {
   width: 200px;
+  height: 100%;
+}
+
+.cartItems button, .cartItems .details button {
+  font-size: 11pt;
+  font-weight: 500;
 }
 
 .cartItems .details button{
   margin: 0 0 0 10px;
   width: 40px;
+  font-size: 11pt;
+  font-weight: 500;
 }
 
 .summary {
@@ -324,6 +332,7 @@ select {
 
 .summary h3, .summary button {
   margin: 10px 0 0 0;
+  font-weight: 600;
 }
 
 .summary button {
