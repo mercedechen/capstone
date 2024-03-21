@@ -145,22 +145,23 @@ select {
 }
 
 .product h2, .productDetails h2 {
-  font-size: 12pt;
+  font-size: 11pt; 
   font-weight: 600;
 }
 
 /* Product Details */
 .productView {
   display: flex;
-  margin: 100px 200px;
-  text-align: left;
+  justify-content: center;
+  margin: 50px 0;
 }
 
 .productView img {
-  width: 300px;
+  width: 400px;
 }
 
 .productDetails {
+  text-align: left;
   margin-left: 50px;
   width: 600px;
 }
@@ -227,7 +228,7 @@ select {
 .registration label, .login label, .checkout label {
   display: flex;
   flex-direction: column;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 14px;
 }
 
@@ -237,12 +238,14 @@ select {
   height: 25px;
   border: none;
   background-color: #D9D9D9;
+  color: #353535;
   margin: 10px 0 15px 0;
   padding-left: 10px;
 }
 
 .registration button, .login button, .account button {
   margin-top: 10px;
+  font-weight: 500; 
 }
 
 .response {
