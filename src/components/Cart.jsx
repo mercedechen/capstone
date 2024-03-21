@@ -16,7 +16,7 @@ function Cart(props) {
   const dispatch = useDispatch();
   const cart = useSelector(getCart);
   const [ cartSubtotal, setCartSubtotal ] = useState(0);
-  const [ cartTotal, setCartTotal ] = useState(0)
+  const [ cartTotal, setCartTotal ] = useState(0);
 
   // Only when there's a change to 'cart', useEffect() will be invoked. Maps over each item in the cart array and calculates subtotal.
   // Subtotal = item price * item quantity and adds to cartSubtotal. setCartSubtotal() updates cartSubtotal.
@@ -42,13 +42,16 @@ function Cart(props) {
   localStorage.setItem("cart", JSON.stringify(cart))
 
   const handleClick = () => {
-    navigate('checkout');
+    if(cart.length != 0){
+      navigate('checkout');
+    }
   };
 
   return (
     <div>
       <div className="cartItems">
         {
+          cart.length ?
           cart.map((product) => {
             return (
               <div key={product.id} className="itemInCart">
@@ -91,14 +94,22 @@ function Cart(props) {
               </div>
             )
           })
+          : 
+          <div> 
+            <p>Your cart is currently empty.</p>
+          </div>
         }
       </div>
 
       <div className="summary">
-        <h3>Subtotal:</h3>
-        <p>${cartSubtotal}</p>
-        <h3>Total:</h3>
-        <p>${cartTotal}</p>
+        <div className="sumTotals">
+          <h3>Subtotal</h3>
+          <p>${cartSubtotal}</p>
+        </div>
+        <div className="sumTotals">
+          <h3>Total</h3>
+          <p>${cartTotal}</p>
+        </div>
         <button onClick={handleClick}>Check Out</button>
       </div>
     </div>
