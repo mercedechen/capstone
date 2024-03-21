@@ -35,7 +35,7 @@ function Account(props) {
                   <h3>Username:</h3>
                   <p>{user.username}</p>
                   <h3>Password:</h3>
-                  <p>{user.password}</p>
+                  <p>******</p>
                   <h3>Email:</h3>
                   <p>{user.email}</p>
                 </div>
