@@ -37,7 +37,7 @@ h2, h3, h4 {
 }
 
 p {
-  margin-top: 50px
+  margin-top: 50px;
 }
 
 /* Navigation */
@@ -168,6 +168,10 @@ select {
   text-align: left;
   margin-left: 50px;
   width: 600px;
+}
+
+.productDetails p, .summary p {
+  margin: 0;
 }
 
 .productDetails button {
@@ -322,6 +326,7 @@ select {
 .quantity p {
   width: 50px;
   text-align: center;
+  margin: 0;
 }
 
 .quantity button {
