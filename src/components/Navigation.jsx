@@ -31,6 +31,9 @@ function Navigation(props){
               <img src={logo}/>
             </NavLink>
           </div>
+          <NavLink to="/account">
+            Account
+          </NavLink>
           <a onClick={logoutUser}>
             Logout
           </a>

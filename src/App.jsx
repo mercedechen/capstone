@@ -18,6 +18,7 @@ import Cart from './components/Cart.jsx';
 import Checkout from './components/Checkout.jsx';
 import Footer from './components/Footer.jsx';
 import About from './components/About.jsx';
+import Sustainability from './components/Sustainability.jsx';
 
 function App() {
   
@@ -113,6 +114,11 @@ function App() {
           <Route 
             path="/about"
             element={<About/>}
+          />
+
+          <Route 
+            path="/sustainability"
+            element={<Sustainability/>}
           />
         </Routes>
 

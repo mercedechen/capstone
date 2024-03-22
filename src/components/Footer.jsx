@@ -6,12 +6,15 @@ import About from './About.jsx';
 
 function Footer(){
   return (
-    <div className="external-links">
+    <div className="additional-links">
       <h4>About SHOP</h4>
       <div>
         <Link to="/about">About Us</Link>
       </div>
-      {/* <p>Sustainability</p> */}
+      <div>
+        <Link to="/sustainability">Sustainability</Link>
+      </div>
+
       {/* <p>Press Room</p> */}
     </div>
   )
