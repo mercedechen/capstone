@@ -367,3 +367,26 @@ select {
 .summary button {
   margin-top: 20px;
 }
+
+/* Footer */
+
+.external-links {
+  display: flex;
+  flex-direction: column;
+  text-transform: uppercase;
+  font-size: 8pt;
+}
+
+.external-links h4 {
+  font-weight: 600;
+}
+
+.about {
+  margin: 50px auto;
+  text-align: left;
+  width: 750px;
+}
+
+.legal {
+  margin: 20px 0;
+}

@@ -52,6 +52,7 @@ export const apiSlice = createApi({
         url: `/products/${id}`,
       }),
     }),
+
   }),
 });
 
