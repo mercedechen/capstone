@@ -1,21 +1,22 @@
 // react
 import { Link } from 'react-router-dom';
 
-// component
-import About from './About.jsx';
-
 function Footer(){
   return (
-    <div className="additional-links">
-      <h4>About SHOP</h4>
-      <div>
-        <Link to="/about">About Us</Link>
-      </div>
-      <div>
-        <Link to="/sustainability">Sustainability</Link>
+    <div className="links">
+      <div className="additional-links">
+        <h4>Customer Service</h4>
+        <Link to="/contact">Contact Us</Link>
+        <Link to="/faq">FAQ</Link>
+        <Link to="/shipping">Shipping</Link>
+        <Link to="/return">Returns</Link>
       </div>
 
-      {/* <p>Press Room</p> */}
+      <div className="additional-links">
+        <h4>About SHOP</h4>
+        <Link to="/about">About Us</Link>
+        <Link to="/sustainability">Sustainability</Link>
+      </div>
     </div>
   )
 }

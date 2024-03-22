@@ -370,11 +370,17 @@ select {
 
 /* Footer */
 
+.links {
+  display: flex;
+  justify-content: center;
+}
+
 .additional-links {
   display: flex;
   flex-direction: column;
   text-transform: uppercase;
   font-size: 8pt;
+  margin: 0 20px;
 }
 
 .additional-links h4 {
