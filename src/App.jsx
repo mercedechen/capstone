@@ -16,6 +16,7 @@ import FilterByJewelery from './components/FilterByJewelery.jsx';
 import FilterByElectronics from './components/FilterByElectronics.jsx';
 import Cart from './components/Cart.jsx';
 import Checkout from './components/Checkout.jsx';
+import Confirmation from './components/Confirmation.jsx';
 import Footer from './components/Footer.jsx';
 import About from './components/About.jsx';
 import Sustainability from './components/Sustainability.jsx';
@@ -106,6 +107,13 @@ function App() {
           <Route
             path="/cart/checkout"
             element={<Checkout 
+              token={token}
+            />}
+          />
+
+          <Route
+            path="/cart/checkout/confirmation"
+            element={<Confirmation
               token={token}
             />}
           />

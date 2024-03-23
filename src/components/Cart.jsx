@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 
 // Redux
 import { useSelector, useDispatch } from "react-redux";
-import { increase, decrease, removeProduct, getCart, addProduct } from "../redux/cart";
+import { increase, decrease, removeProduct, getCart } from "../redux/cart";
 
 function Cart(props) {
 

@@ -1,6 +1,9 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Checkout () {
+
+  const navigate = useNavigate();
 
   const [ billingInfo, setBillingInfo ] = useState({
     name: {
@@ -19,18 +22,9 @@ function Checkout () {
     },
   });
 
-  const [ error, setError ] = useState(null);
-  const [ success, setSuccess ] = useState(null);
-
   const handleSubmit = (event) => {
     event.preventDefault();
-
-    if (!billingInfo || !shippingInfo) {
-      setError("Missing payment information. Please review the information above and try again. If problems persist, please contact us at customerservice@shop.com")
-      return
-    } else {
-      setSuccess("Thank you for your order! An email has been sent with your order details. For any questions, please contact us at contact@shop.com.")
-    }
+    navigate('confirmation');
   }
 
   const onUserInput = (e) => {
@@ -168,11 +162,6 @@ function Checkout () {
           </label>
           <button>Order</button>
         </form>
-
-        <div className="response">
-          {error ? <p>{error}</p> : <span/>}
-          {success ? <p>{success}</p> : <span/>}
-        </div>
       </div>
   )
 }

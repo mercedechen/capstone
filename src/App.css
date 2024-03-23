@@ -279,6 +279,7 @@ select {
 
 .orders {
   width: 700px;
+  margin-left: 25px;
 }
 
 .account h2, .orders h2 {
@@ -366,6 +367,17 @@ select {
 
 .summary button {
   margin-top: 20px;
+}
+
+.confirmation {
+  margin: 50px auto;
+  width: 750px;
+  text-align: center;
+}
+
+.confirmation p {
+  margin: 20px 0 50px 0;
+  padding: 0;
 }
 
 /* Footer */
