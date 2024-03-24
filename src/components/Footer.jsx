@@ -8,7 +8,7 @@ function Footer(){
         <h4>Customer Service</h4>
         <Link to="/contact">Contact Us</Link>
         <Link to="/shipping">Shipping</Link>
-        <Link to="/return">Returns</Link>
+        <Link to="/returns">Returns</Link>
       </div>
 
       <div className="additional-links">

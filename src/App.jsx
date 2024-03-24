@@ -22,6 +22,7 @@ import About from './components/About.jsx';
 import Sustainability from './components/Sustainability.jsx';
 import Contact from './components/Contact.jsx';
 import Shipping from './components/Shipping.jsx';
+import Returns from './components/Returns.jsx';
 
 function App() {
   
@@ -130,6 +131,11 @@ function App() {
           <Route 
             path="/shipping"
             element={<Shipping/>}
+          />
+
+          <Route 
+            path="/returns"
+            element={<Returns/>}
           />
 
           <Route 
