@@ -48,7 +48,7 @@ function Cart(props) {
   };
 
   return (
-    <div>
+    <div className="container">
       <div className="cartItems">
         {
           cart.length ?

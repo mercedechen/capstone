@@ -72,68 +72,66 @@ function Register(props) {
   }
 
   return (
-    <div className="registration">
-      <h2>Create an Account</h2>
-
-      <form onSubmit={handleSubmit}>
-        <label>First Name
-          <input 
-            type="text" 
-            name="firstname" 
-            placeholder="First Name" 
-            value={userInfo.name.firstname} 
-            onChange={onUserInput}
-            required
-          />
-        </label>
-        <label>Last Name
-          <input 
-            type="text" 
-            name="lastname" 
-            placeholder="Last Name"
-            value={userInfo.name.lastname}
-            onChange={onUserInput}
-            required
-          />
-        </label>
-        <label>Email
-          <input 
-            type="text" 
-            name="email" 
-            placeholder="Email"
-            value={userInfo.email}
-            onChange={onUserInput}
-          />
-        </label>
-        <label>Username
-          <input 
-            type="text" 
-            name="username" 
-            value={userInfo.username}
-            onChange={onUserInput}
-            placeholder="Username"
-            required
-          />
-        </label>
-        <label>Password
-          <input 
-            type="password" 
-            name="password" 
-            value={userInfo.password}
-            onChange={onUserInput}
-            placeholder="Password"
-            required
-          />
-        </label>
-
-        <button>Sign Up</button>
-      </form>
-
-      <div className="response">
-        {/* check ? true : false */}
-        { errorMsg ? <p>Oops! Unable to create an account right now. Please try again later. {errorMsg}</p> : <span /> }
-
-        {success ? <p>{success}</p> : <span />}
+    <div className="container">
+      <div className="registration">
+        <h2>Create an Account</h2>
+        <form onSubmit={handleSubmit}>
+          <label>First Name
+            <input
+              type="text"
+              name="firstname"
+              placeholder="First Name"
+              value={userInfo.name.firstname}
+              onChange={onUserInput}
+              required
+            />
+          </label>
+          <label>Last Name
+            <input
+              type="text"
+              name="lastname"
+              placeholder="Last Name"
+              value={userInfo.name.lastname}
+              onChange={onUserInput}
+              required
+            />
+          </label>
+          <label>Email
+            <input
+              type="text"
+              name="email"
+              placeholder="Email"
+              value={userInfo.email}
+              onChange={onUserInput}
+            />
+          </label>
+          <label>Username
+            <input
+              type="text"
+              name="username"
+              value={userInfo.username}
+              onChange={onUserInput}
+              placeholder="Username"
+              required
+            />
+          </label>
+          <label>Password
+            <input
+              type="password"
+              name="password"
+              value={userInfo.password}
+              onChange={onUserInput}
+              placeholder="Password"
+              required
+            />
+          </label>
+          <button>Sign Up</button>
+        </form>
+        <div className="response">
+          {/* check ? true : false */}
+          { errorMsg ? <p>Oops! Unable to create an account right now. Please try again later. {errorMsg}</p> : <span /> }
+          {success ? <p>{success}</p> : <span />}
+        </div>
       </div>
     </div>
   )

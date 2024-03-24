@@ -47,32 +47,33 @@ function Login(props) {
   };
 
   return (
-    <div className="login">
-      <h2>Login</h2>
-
-      <form onSubmit={handleSubmit}>
-        <label>Username
-          <input 
-            type="text"
-            name="username"
-            placeholder="Username"
-            value={props.userInfo.username}
-            onChange={onUserInput}
-            />
-        </label>
-        <label>Password
-          <input 
-            type="password"
-            name="password"
-            placeholder="Password"
-            value={props.userInfo.password}
-            onChange={onUserInput}
-            />
-        </label>
-        <button>Login</button>
-        
-        { errorMsg ? <p>Error: {errorMsg}</p> : <span /> }
-      </form>
+    <div className="container">
+      <div className="login">
+        <h2>Login</h2>
+        <form onSubmit={handleSubmit}>
+          <label>Username
+            <input
+              type="text"
+              name="username"
+              placeholder="Username"
+              value={props.userInfo.username}
+              onChange={onUserInput}
+              />
+          </label>
+          <label>Password
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              value={props.userInfo.password}
+              onChange={onUserInput}
+              />
+          </label>
+          <button>Login</button>
+      
+          { errorMsg ? <p>Error: {errorMsg}</p> : <span /> }
+        </form>
+      </div>
     </div>
   )
 }

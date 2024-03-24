@@ -20,6 +20,8 @@ import Confirmation from './components/Confirmation.jsx';
 import Footer from './components/Footer.jsx';
 import About from './components/About.jsx';
 import Sustainability from './components/Sustainability.jsx';
+import Contact from './components/Contact.jsx';
+import Shipping from './components/Shipping.jsx';
 
 function App() {
   
@@ -119,6 +121,17 @@ function App() {
           />
 
       {/* Footer */}
+
+          <Route
+            path="/contact"
+            element={<Contact/>}
+          />
+
+          <Route 
+            path="/shipping"
+            element={<Shipping/>}
+          />
+
           <Route 
             path="/about"
             element={<About/>}

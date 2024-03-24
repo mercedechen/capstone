@@ -7,7 +7,6 @@ function Footer(){
       <div className="additional-links">
         <h4>Customer Service</h4>
         <Link to="/contact">Contact Us</Link>
-        <Link to="/faq">FAQ</Link>
         <Link to="/shipping">Shipping</Link>
         <Link to="/return">Returns</Link>
       </div>

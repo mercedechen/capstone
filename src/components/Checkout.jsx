@@ -85,83 +85,83 @@ function Checkout () {
   };
 
   return (
-      <div className="checkout">
-        <h2>Checkout</h2>
-
-        <form onSubmit={handleSubmit}>
-          <label>First Name
-            <input 
-              type="text"
-              name="firstname"
-              placeholder="First Name"
-              value={billingInfo.name.firstname}
-              onChange={onUserInput}
-              required
-            />
-          </label>
-          <label>Last Name
-            <input 
-              type="text"
-              name="lastname"
-              placeholder="Last Name"
-              value={billingInfo.name.lastname}
-              onChange={onUserInput}
-              required
-            />
-          </label>
-          <label>Card Number
-            <input 
-              type="text"
-              name="cardnumber"
-              placeholder="Card Number"
-              value={billingInfo.cardnumber}
-              onChange={onUserInput}
-              required
-            />
-          </label>
-
-          <label>Address
-            <input 
-              type="text"
-              name="street"
-              placeholder="Address"
-              value={shippingInfo.address.street}
-              onChange={onUserInput}
-              required
-            />
-          </label>
-          <label>City
-            <input 
-              type="text"
-              name="city"
-              placeholder="City"
-              value={shippingInfo.address.city}
-              onChange={onUserInput}
-              required
-            />
-          </label>
-          <label>State
-            <input 
-              type="text"
-              name="state"
-              placeholder="State"
-              value={shippingInfo.address.state}
-              onChange={onUserInput}
-              required
-            />
-          </label>
-          <label>Zip Code
-            <input 
-              type="text"
-              name="zipcode"
-              placeholder="Zip Code"
-              value={shippingInfo.address.zipcode}
-              onChange={onUserInput}
-              required
-            />
-          </label>
-          <button>Order</button>
-        </form>
+      <div className="container">
+        <div className="checkout">
+          <h2>Checkout</h2>
+          <form onSubmit={handleSubmit}>
+            <label>First Name
+              <input
+                type="text"
+                name="firstname"
+                placeholder="First Name"
+                value={billingInfo.name.firstname}
+                onChange={onUserInput}
+                required
+              />
+            </label>
+            <label>Last Name
+              <input
+                type="text"
+                name="lastname"
+                placeholder="Last Name"
+                value={billingInfo.name.lastname}
+                onChange={onUserInput}
+                required
+              />
+            </label>
+            <label>Card Number
+              <input
+                type="text"
+                name="cardnumber"
+                placeholder="Card Number"
+                value={billingInfo.cardnumber}
+                onChange={onUserInput}
+                required
+              />
+            </label>
+            <label>Address
+              <input
+                type="text"
+                name="street"
+                placeholder="Address"
+                value={shippingInfo.address.street}
+                onChange={onUserInput}
+                required
+              />
+            </label>
+            <label>City
+              <input
+                type="text"
+                name="city"
+                placeholder="City"
+                value={shippingInfo.address.city}
+                onChange={onUserInput}
+                required
+              />
+            </label>
+            <label>State
+              <input
+                type="text"
+                name="state"
+                placeholder="State"
+                value={shippingInfo.address.state}
+                onChange={onUserInput}
+                required
+              />
+            </label>
+            <label>Zip Code
+              <input
+                type="text"
+                name="zipcode"
+                placeholder="Zip Code"
+                value={shippingInfo.address.zipcode}
+                onChange={onUserInput}
+                required
+              />
+            </label>
+            <button>Order</button>
+          </form>
+        </div>
       </div>
   )
 }
