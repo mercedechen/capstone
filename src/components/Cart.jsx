@@ -61,17 +61,11 @@ function Cart(props) {
                   <h2>{product.title}</h2>
 
                   <div className="details">
-                    <h3>Description:</h3>
-                    <p>{product.description}</p>
-                  </div>
-
-                  <div className="details">
                     <h3>Price:</h3>
                     <p>${product.price}</p>
                   </div>
 
                   <div className="quantity">
-
                     <button
                       onClick={() => {
                         if(product.quantity === 1) {
@@ -85,7 +79,6 @@ function Cart(props) {
                     <p>{product.quantity}</p>
 
                     <button onClick={() => {dispatch(increase(product.id))}}> + </button>
-
                     <div className="removeCartItem">
                       <button onClick={()=>{dispatch(removeProduct(product.id))}}> Remove </button>
                     </div>

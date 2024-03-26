@@ -26,20 +26,20 @@ function Navigation(props){
     return (
       <div>
         <nav>
-          <div className="logo-box">
-            <NavLink to="/" className="logo">
-              <img src={logo}/>
+          <NavLink to="/" className="logo">
+            <img src={logo}/>
+          </NavLink>
+          <div className="directory">
+            <NavLink to="/account">
+              Account
+            </NavLink>
+            <a onClick={logoutUser}>
+              Logout
+            </a>
+            <NavLink to="/cart">
+              Cart
             </NavLink>
           </div>
-          <NavLink to="/account">
-            Account
-          </NavLink>
-          <a onClick={logoutUser}>
-            Logout
-          </a>
-          <NavLink to="/cart">
-            Cart
-          </NavLink>
         </nav>
         
         <div className="filters">
@@ -56,17 +56,13 @@ function Navigation(props){
   return (
     <div>
       <nav>
-        <div className="logo-box">
-          <NavLink to="/" className="logo">
-            <img src={logo}/>
-          </NavLink>
+        <NavLink to="/" className="logo">
+          <img src={logo}/>
+        </NavLink>
+        <div className="directory">
+          <NavLink to="/register">Register</NavLink>
+          <NavLink to="/login">Login</NavLink>
         </div>
-          <NavLink to="/register">
-            Register
-          </NavLink>
-          <NavLink to="/login">
-            Login
-          </NavLink>
       </nav>
 
       <div className="filters">

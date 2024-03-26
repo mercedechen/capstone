@@ -17,12 +17,11 @@ function Search({ data, setSearchedProducts }) {
 
   return (
     <div className="search">
-      <form>
-        <input 
-          type="text" 
-          placeholder="Search..." 
-          onChange={(event) => searchProducts(event.target.value)}/>
-      </form>
+      <input 
+        type="text" 
+        placeholder="Search..." 
+        onChange={(event) => searchProducts(event.target.value)}
+      />
     </div>
   )
 }
